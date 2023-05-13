@@ -3,7 +3,7 @@ import styled from "styled-components"
 export const StyleBa = styled.div`
   margin-left: -250px;
   position: absolute;
-  top: 100px;
+  top: 120px;
   padding: 10px 20px;
   background: var(--DarkGry);
   width: 800px;
@@ -28,9 +28,6 @@ export const StyleBa = styled.div`
     transform: translateY(0); /* Animación de desplazamiento hacia arriba */
   }
 }
-  /* display: flex;
-  flex-direction: column;
-  gap: 1rem; */
   h1 {
     width: 100%;
     font-size: 3rem;
@@ -41,5 +38,30 @@ export const StyleBa = styled.div`
   p {
     color: var(--Gray);
     font-size: 1.3rem;
+    margin-bottom: 20px;
+  }
+`
+
+export const StyleButton = styled.div`
+  background: var(--White);
+  width: 45%;
+  border-radius: 5px;
+  border: 1px solid;
+  border-color: var(--Gray);
+  padding: 10px 20px;
+  margin-bottom: 20px;
+
+  button{
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    line-height: 1rem;
+    cursor: pointer;
+    background: var(--White);
+  }
+  :hover{
+    color: var(--White);
+    background: var(--purple);
+    border-radius: 7px;
   }
 `
