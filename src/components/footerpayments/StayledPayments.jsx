@@ -23,6 +23,7 @@ h4 {
 ul {
     display: flex;
     gap: 2rem;
+    cursor: pointer;
 }
 
 `;
