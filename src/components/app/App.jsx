@@ -6,7 +6,7 @@ const App = () => {
     return (
         <>
         <GlobalStyled />
-        <h1>hola diana</h1>
+       
         <Footer />
         </>
     )
