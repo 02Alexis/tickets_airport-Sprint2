@@ -1,5 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
+
 const GlobalStyled = createGlobalStyle`
 :root{
     --purple: #9e1071;
@@ -19,6 +20,7 @@ const GlobalStyled = createGlobalStyle`
 
 body{
     padding: 50px 50px 0;
+
 }
 `
 export default GlobalStyled
