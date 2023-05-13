@@ -8,7 +8,6 @@ const App = () => {
         <>
         <GlobalStyled />
         <Banner />
-        <h1>hola diana</h1>
         <Footer />
         </>
     )

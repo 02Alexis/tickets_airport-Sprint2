@@ -1,5 +1,6 @@
 import React from 'react';
-import { StyleBa } from './StyleBannerForm';
+import { StyleBa, StyleButton } from './StyleBannerForm';
+import Form from '../form/form';
 
 const BannerForm = () => {
     return (
@@ -7,7 +8,12 @@ const BannerForm = () => {
         <StyleBa>
             <h1>Busca un nuevo destino y comienza la aventura.</h1>
             <p>Descubre vuelos al mejor precio y perfectos para cualquier viaje.</p>
-            <button>Viaje redondo</button>
+            <StyleButton>
+                <button>Viaje redondo</button>
+                <button>Viaje sencillo</button>
+            </StyleButton>
+            <Form />
+
         </StyleBa>
         </>
     )

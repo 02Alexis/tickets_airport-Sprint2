@@ -15,6 +15,8 @@ import ServicesCards from '../footerservices/Services';
 
 const Payments = () => {
     return (
+        <>
+        </>
         <div>
         <StyledTitle>
             <h3>Pago seguro</h3>
