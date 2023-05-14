@@ -1,8 +1,15 @@
 import React from 'react';
 import { Container, ContainerTwo, StyleButton, StyleForm, StyledContainer } from './StyleForm';
 import Plane from '../../assets/plane.svg';
+import { useNavigate } from 'react-router-dom';
 
 const Form = () => {
+    const navigate = useNavigate();
+
+    const handleButton = () => {
+        console.log("entre");
+        navigate('/prueba')
+    }
     return (
         <>
         <StyleForm>
@@ -39,7 +46,7 @@ const Form = () => {
                 </StyledContainer>
             </ContainerTwo>
         </StyleForm>
-        <StyleButton><img src={Plane} alt="Avion" /> Buscar vuelos</StyleButton>
+        <StyleButton type='button' onClick={() => handleButton()}><img src={Plane} alt="Avion" /> Buscar vuelos</StyleButton>
         </>
     )
 }
