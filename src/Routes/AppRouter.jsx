@@ -9,8 +9,8 @@ const AppRouter = () => {
     <BrowserRouter>
       <Routes>
         <Route index element={<App />} />
-        <Route patch="/prueba" element={<Prueba />} />
-        <Route patch="*" element={<NotFoundPage />} />
+        <Route path="/prueba" element={<Prueba />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>
   );
