@@ -8,7 +8,7 @@ const Form = () => {
 
     const handleButton = () => {
         console.log("entre");
-        navigate('/prueba')
+        navigate('/flightDetail')
     }
     return (
         <>
