@@ -16,8 +16,7 @@ import ServicesCards from '../footerservices/Services';
 const Payments = () => {
     return (
         <>
-        </>
-        <div>
+         <div>
         <StyledTitle>
             <h3>Pago seguro</h3>
         </StyledTitle>
@@ -46,6 +45,7 @@ const Payments = () => {
         
         
         </div>
+        </>       
     )
 }
 
