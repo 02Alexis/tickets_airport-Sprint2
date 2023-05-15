@@ -1,9 +1,12 @@
 import React from 'react';
+import NotFound from '../components/notFound/NotFound';
+import GlobalStyled from '../components/app/StyledApp'
 
 const NotFoundPage = () => {
     return (
         <>
-        <h1>404</h1>
+        <GlobalStyled />
+        <NotFound />
         </>
     )
 }
