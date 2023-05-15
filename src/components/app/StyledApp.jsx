@@ -6,7 +6,7 @@ const GlobalStyled = createGlobalStyle`
     --purple: #9e1071;
     --Gray: rgb(128, 128, 128);
     --White: #f6f6f6;
-    --DarkGry: #f6f6f6;
+    --DarkGry: #f4f4f4;
 }
 
 *{
