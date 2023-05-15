@@ -8,12 +8,11 @@ import FlightCost from '../components/flightCost/FlightCost';
 const FlightDetail = () => {
     return (
         <>
-        <GlobalStyled/>
+       <GlobalStyled/>
        <ArrivalsFlight/>
        <DepartureFlight/>
        <ReservationFligth />
-       <FlightCost />      
-       
+       <FlightCost />   
         </>
     )
 }
