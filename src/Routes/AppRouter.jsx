@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import App from "../components/app/App";
 import FlightDetail from "../pages/FlightDetail";
 import NotFoundPage from "../pages/NotFoundPage";
+import SeatSelection from "../pages/SeatSelection";
 
 const AppRouter = () => {
   return (
@@ -10,6 +11,7 @@ const AppRouter = () => {
       <Routes>
         <Route index element={<App />} />
         <Route path="/flightDetail" element={<FlightDetail />} />
+        <Route path="/seatSelection" element={<SeatSelection />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>
