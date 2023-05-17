@@ -2,6 +2,8 @@ import React from 'react';
 import { Container, ContainerTwo, StyleButton, StyleForm, StyledContainer } from './StyleForm';
 import Plane from '../../assets/plane.svg';
 import { useNavigate } from 'react-router-dom';
+import ButtonModalCity from '../ButtonModalCity/ButtonModalCity';
+import ModalPassenger from '../modalPassenger/ModalPassenger';
 
 const Form = () => {
     const navigate = useNavigate();
@@ -15,7 +17,7 @@ const Form = () => {
         <StyleForm>
             <Container>
                 <StyledContainer>
-                    <h1>Ciudad de Mexico</h1>
+                    <ButtonModalCity />
                     <p>Origen</p>
                 </StyledContainer>
             </Container>
@@ -37,7 +39,7 @@ const Form = () => {
             </ContainerTwo>
             <ContainerTwo>
                 <StyledContainer>
-                <span>Pasajeros <p>1 Adulto</p> </span>
+                    <ModalPassenger />
                 </StyledContainer>
             </ContainerTwo>
             <ContainerTwo>

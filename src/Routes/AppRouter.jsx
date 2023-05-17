@@ -9,9 +9,12 @@ const AppRouter = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route index element={<App />} />
-        <Route path="/flightDetail" element={<FlightDetail />} />
-        <Route path="/seatSelection" element={<SeatSelection />} />
+        <Route path="/">
+          <Route index element={<App />} />
+          <Route path="flightDetail" element={<FlightDetail />}>
+            <Route path="seatSelection" element={<SeatSelection />} />
+          </Route>
+        </Route>
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>

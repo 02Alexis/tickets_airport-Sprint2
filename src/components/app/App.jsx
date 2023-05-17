@@ -3,7 +3,6 @@ import GlobalStyled from './StyledApp';
 import Footer from '../footer/Footer';
 import Banner from '../banner/Banner';
 
-
 const App = () => {
     return (
         <>
