@@ -1,7 +1,17 @@
 import React from "react";
 import { Contenedor, StyleContainer, Container, Column } from "./StyleFlightCost";
+import { useNavigate } from "react-router-dom";
 
-const FlightCost = () => {
+const FlightCost = ({ showSeatSelection }) => {
+
+  const navigate = useNavigate();
+
+    const handleButton = () => {
+        console.log("entre");
+        navigate('/flightDetail/seatSelection')
+        showSeatSelection(true)
+    }
+
   return (
     <>
     <Contenedor>
@@ -24,7 +34,10 @@ const FlightCost = () => {
         </Column>
       </Container>
      </StyleContainer>
+     <button type='button' onClick={() => handleButton()}>ir a otra pagina</button>
     </Contenedor>
+
+    
     </>
   );
 };

@@ -13,6 +13,8 @@ export const Container = styled.div`
   border-color: var(--Gray);
   border-radius: 5px;
   text-align: center;
+  cursor: pointer;
+
   h1 {
     width: 100%;
     font-size: 2.3rem;
@@ -41,8 +43,8 @@ export const ContainerTwo = styled.div`
  
 `
 export const StyledContainer = styled.div`
-position: relative;
-top: 10px;
+/* position: relative;
+top: 10px; */
 `
 
 export const StyleButton = styled.button`
