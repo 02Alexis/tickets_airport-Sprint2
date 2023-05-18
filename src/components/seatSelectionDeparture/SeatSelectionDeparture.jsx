@@ -11,6 +11,7 @@ import {
   Column2,
   ReferenSeat,
   Row,
+  SeatDeparture,
   SeatSelect,
   Subtittle,
 } from "./StyleSeatSelectionDeparture";
@@ -18,6 +19,7 @@ import {
 const SeatSelectionDeparture = () => {
   return (
     <>
+    <SeatDeparture>
       <StyledDate>
         <StyledContainer>
           <h1>Vuelo de Salida</h1>
@@ -175,6 +177,7 @@ const SeatSelectionDeparture = () => {
           </Row>
         </Column>
       </SeatSelect>
+      </SeatDeparture>
     </>
   );
 };

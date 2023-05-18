@@ -7,6 +7,7 @@ export const StyleCardDateBaggage = styled.div`
   padding: 20px;
   margin-bottom: 1rem;
   width: 950px;
+  background: white;
 `;
 
 export const StyleTable = styled.table`
