@@ -10,7 +10,7 @@ export const StyledContainer = styled.div`
 export const StyleBottonDeparture = styled.div`
   border-radius: 15px;
   border: 1px solid #9e1071;
-  backgroundcolor: transparent;
+  background-color: transparent;
   padding: 10px 16px;
   margintop: 1rem;
   margin-top: 1rem;

@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export const Contenedor = styled.div`
 position: fixed;
-top: 38%;
+top: 40%;
 right: 80px;
 width: 25%;
  h1{
@@ -12,6 +12,8 @@ width: 25%;
 `
 export const StyleContainer = styled.div`
 border-radius: 5px;
+background-color: white;
+box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 `
 export const Container = styled.div`
 display: grid;

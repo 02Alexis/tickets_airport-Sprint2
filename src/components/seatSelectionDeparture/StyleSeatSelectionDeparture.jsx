@@ -1,5 +1,10 @@
 import styled from "styled-components";
 
+
+export const SeatDeparture = styled.div`
+margin-bottom: 40px;
+`
+
 export const SeatSelect = styled.div`
   display: flex;
   justify-content: space-between;
@@ -34,7 +39,6 @@ export const Aisle = styled.div`
   width: 50px;
   color: black;
   background-color: white;
-  border: 1px solid gray;
   border-radius: 5px;
   margin-bottom: 10px;
   margin-right: 10px;

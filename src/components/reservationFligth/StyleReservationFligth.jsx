@@ -13,6 +13,9 @@ export const Contenedor = styled.div`
 
 export const StyleContainer = styled.div`
 border-radius: 5px;
+background-color: white;
+box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+padding: 5px;
 p{
 color: var(--Gray);
 margin: 10px;

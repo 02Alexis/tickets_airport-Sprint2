@@ -7,6 +7,7 @@ box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 padding: 20px;
 margin-bottom: 1rem;
 width: 950px;
+background: white;
 `;
 
 export const StyleTableArrivals = styled.div`

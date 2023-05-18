@@ -35,8 +35,7 @@ export const AisleArrival = styled.div`
   width: 50px;
   color: black;
   background-color: white;
-  border: 1px solid gray;
-  border-radius: 5px;
+    border-radius: 5px;
   margin-bottom: 10px;
   margin-right: 10px;
   padding: 20px;

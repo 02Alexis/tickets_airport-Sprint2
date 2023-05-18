@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"; //Importamos las dependencias necesarias:
 import ArrivalsFlight from "../components/arrivalsFlights/ArrivalsFlight";
 import DepartureFlight from "../components/departureFlight/DepartureFlight";
-import GlobalStyled from "../components/app/StyledApp";
+import GlobalStyled, { CustomPageStyles } from "../components/app/StyledApp";
 import ReservationFligth from "../components/reservationFligth/ReservationFligth";
 import FlightCost from "../components/flightCost/FlightCost";
 import LoadingComponent from "../components/loading/LoadingComponent"; // importamos el componente
@@ -41,6 +41,7 @@ const FlightDetail = () => {
             ) : (
               <>
                 <GlobalStyled />
+                <CustomPageStyles />
                 <DepartureFlight />
                 <ArrivalsFlight />
                 <ReservationFligth />

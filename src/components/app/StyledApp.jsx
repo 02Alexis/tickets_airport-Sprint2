@@ -1,5 +1,11 @@
 import { createGlobalStyle } from "styled-components";
 
+export const CustomPageStyles = createGlobalStyle`
+body {
+  background-color: #f2f2f2; /* Cambia el fondo del cuerpo a gris claro */
+}
+`;
+
 
 const GlobalStyled = createGlobalStyle`
 :root{
