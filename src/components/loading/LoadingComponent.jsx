@@ -21,6 +21,12 @@ const FlyingAirplane = styled.div`
   left: 0; // Coloca el avión horizontalmente
   transform: translate(-50%, -50%); // Centra el avión exactamente
   animation: ${flyAnimation} 2s linear infinite; // Aplica la animación al avión
+    width: 100%;
+    height: 100%;
+  img{
+    width: 50%;
+    height: 50%;
+  }
 `;
 
 // Componente de carga principal
