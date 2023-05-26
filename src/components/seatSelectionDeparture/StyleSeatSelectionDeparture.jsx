@@ -59,6 +59,10 @@ export const Button = styled.button`
   border-radius: 5px;
   margin-bottom: 10px;
   margin-right: 10px;
+  cursor: pointer;
+  &:hover {
+    background-color: var(--purple);
+    }
 `;
 
 //Estilos Fechas de vielo Departure

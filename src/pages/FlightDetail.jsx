@@ -3,14 +3,18 @@ import ArrivalsFlight from "../components/arrivalsFlights/ArrivalsFlight";
 import DepartureFlight from "../components/departureFlight/DepartureFlight";
 import GlobalStyled, { CustomPageStyles } from "../components/app/StyledApp";
 import ReservationFligth from "../components/reservationFligth/ReservationFligth";
-import FlightCost from "../components/flightCost/FlightCost";
 import LoadingComponent from "../components/loading/LoadingComponent"; // importamos el componente
 import { Outlet, useLocation } from "react-router-dom";
 import ButtonNavigateFlight from "../components/buttonNavigateFlight/ButtonNavigateFlight";
 
+
 //Creamos el componente principal 'FlightDetail' y declaramos el estado 'isLoading' usando el hook 'useState'. inicialmente, establecemos el estado en true para indicar que la página está cargando 
 const FlightDetail = () => {
   const [isLoading, setIsLoading] = useState(true); // Estado para controlar si la página está cargando o no
+
+  //Hacemos uso de 2 estados 'selectedContainer1' y 'selectedContainer2' para realizar un seguimiento de los contenedores seleccionados en los componentes 
+  const [selectedContainer1, setSelectedContainer1] = useState(null);
+  const [selectedContainer2, setSelectedContainer2] = useState(null);
 
   const [showFlightDetails, setShowFlightDetail] = useState(false);
   let location = useLocation();
@@ -27,12 +31,7 @@ const FlightDetail = () => {
     }
   }, [showFlightDetails, location]);
 
-
-  //Hacemos uso de 2 estados 'selectedContainer1' y 'selectedContainer2' para realizar un seguimiento de los contenedores seleccionados en los componentes 
-  const [selectedContainer1, setSelectedContainer1] = useState(null);
-  const [selectedContainer2, setSelectedContainer2] = useState(null);
-
-    //'handleContainerClick1' y 'handleContainerClick2' son funciones que se llaman cuando se hace clic en un contenedor en los componentes anteriores, respectivamente. Estas funciones actualizan los estados 'selectedContainer1' y 'selectedContainer2' con el índice del contenedor seleccionado.
+  //'handleContainerClick1' y 'handleContainerClick2' son funciones que se llaman cuando se hace clic en un contenedor en los componentes anteriores, respectivamente. Estas funciones actualizan los estados 'selectedContainer1' y 'selectedContainer2' con el índice del contenedor seleccionado.
   // Manejar la selección de contenedor del primer componente
   const handleContainerClick1 = (containerIndex) => {
     setSelectedContainer1(containerIndex);
@@ -67,7 +66,6 @@ const FlightDetail = () => {
                 <DepartureFlight selectedContainer={selectedContainer1} handleContainerClick={handleContainerClick1} />
                 <ArrivalsFlight selectedContainer={selectedContainer2} handleContainerClick={handleContainerClick2} />
                 <ReservationFligth />
-                <FlightCost />
               </>
             )}
           </>

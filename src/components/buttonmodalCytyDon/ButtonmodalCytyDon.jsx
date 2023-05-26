@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { ContainerCity, Modal, ModalContent, ModalHeader, CloseIcon, ModalTitle, SearchContainer, SearchInput, SearchIcon, CityList, CityItem, Error } from './StyButtonModalCity';
+import { ContainerCity, Modal, ModalContent, ModalHeader, CloseIcon, ModalTitle, SearchContainer, SearchInput, SearchIcon, CityList, CityItem, Error } from '../../components/ButtonModalCity/StyButtonModalCity';
 
 import { AiOutlineClose } from "react-icons/ai";
 import { FaSearch } from "react-icons/fa";
 
-const ButtonModalCity = ({ cities, error, selectedCity, setSelectedCity  }) => {
+const ButtonmodalCytyDon = ({ citiesDon, error, selectedCityDon, setSelectedCityDon  }) => {
   const [showModal, setShowModal] = useState(false); // Estado para controlar la visualización del modal. Inicialmente se establece en 'false'.
   const [searchTerm, setSearchTerm] = useState(""); // Estado para almacenar el término de búsqueda. Inicialmente está vacío.
 
@@ -23,7 +23,7 @@ const ButtonModalCity = ({ cities, error, selectedCity, setSelectedCity  }) => {
   // Función para manejar la selección de una ciudad
   // 'handleCityClick' es una función que se llama cuando se selecciona una ciudad en el modal. Establece la ciudad seleccionada en el estado 'selectedCity' y cierra el modal.
   const handleCityClick = (city) => {
-    setSelectedCity(city);
+    setSelectedCityDon(city);
     closeModal();
   };
 
@@ -40,11 +40,11 @@ const ButtonModalCity = ({ cities, error, selectedCity, setSelectedCity  }) => {
   return (
     <>
       <ContainerCity  onClick={openModal}>
-        {selectedCity ? <h1>Ciudad de {selectedCity}</h1> : <h1>---</h1>} 
-        <p>Origen</p>     
+        {selectedCityDon ? <h1>{selectedCityDon}</h1> : <h1>---</h1>} 
+        <p>Seleccione un destino</p>     
       </ContainerCity>
       
-      {!showModal && !selectedCity ? <Error>{"Este campo es obligatorio"} </Error> : null} 
+      {!showModal && !selectedCityDon ? <Error>{"Este campo es obligatorio"} </Error> : null} 
 
       {/* Renderizar el componente Modal solo si 'showModal' es verdadero */}
       {/* El componente 'Modal' se renderiza solo si 'showModal' es 'true'. Se pasa la función 'closeModal' al componente Modal a través de la propiedad 'closeModal', y se pasa la función 'handleCityClick' a través de la propiedad 'handleCityClick'. */}
@@ -73,9 +73,9 @@ const ButtonModalCity = ({ cities, error, selectedCity, setSelectedCity  }) => {
             </SearchContainer>
 
             <CityList>
-              {cities
+              {citiesDon
                 .filter((city) =>
-                  city.cityorigen
+                  city.destination
                     .toLowerCase()
                     .includes(searchTerm.toLowerCase())
                 )
@@ -84,9 +84,9 @@ const ButtonModalCity = ({ cities, error, selectedCity, setSelectedCity  }) => {
                   <CityItem
                     key={city.id}
                     value={city.id}
-                    onClick={() => handleCityClick(city.cityorigen)}
+                    onClick={() => handleCityClick(city.destination)}
                   >
-                    {city.cityorigen}      {city.initialor}
+                    {city.destination}   {city.initialorDon}
                   </CityItem>
                 ))}
             </CityList>
@@ -97,4 +97,4 @@ const ButtonModalCity = ({ cities, error, selectedCity, setSelectedCity  }) => {
   );
 };
 
-export default ButtonModalCity;
+export default ButtonmodalCytyDon;
