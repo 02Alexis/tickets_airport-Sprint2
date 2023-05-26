@@ -9,6 +9,7 @@ import Scala from "././../../assets/Scala.png"
 const DepartureFlight = ({ selectedContainer, handleContainerClick }) => {
   return (
     <div>
+      
       <StyledDate>
         <StyledContainer>
         <h1>Vuelo de Salida</h1>
