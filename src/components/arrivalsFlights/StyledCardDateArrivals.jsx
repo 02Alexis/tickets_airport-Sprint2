@@ -8,6 +8,24 @@ padding: 20px;
 margin-bottom: 1rem;
 width: 950px;
 background: white;
+
+@media (max-width: 1200px) {
+    width: 100%;
+    max-width: 800px;
+    position: relative;
+    top: 304px;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
+ 
+  @media (max-width: 768px) {
+    top: 370px;
+  }
+
+
 `;
 
 export const StyleTableArrivals = styled.div`
@@ -22,6 +40,20 @@ tr {
     height: 120px;
     width: 1px;
     color: rgb(238, 238, 238);
+  }
+
+  @media (max-width: 650px) {
+    flex-direction: column;
+    hr{
+      display: none;
+    }
+  }
+  
+  @media (max-width: 375px) {
+    flex-direction: column;
+    hr{
+      display: none;
+    }
   }
 }
 `

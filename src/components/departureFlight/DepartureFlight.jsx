@@ -15,6 +15,7 @@ const DepartureFlight = ({ selectedContainer, handleContainerClick }) => {
 
   return (
     <div>
+      
       <StyledDate>
         <StyledContainer>
         <h1>Vuelo de Salida</h1>

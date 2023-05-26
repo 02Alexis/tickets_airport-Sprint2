@@ -1,9 +1,5 @@
 import React from "react";
-import {
-  StyleBottonDeparture,
-  StyledContainer,
-  StyledDate,
-} from "../departureFlight/StylesDeparture";
+
 import {
   Aisle,
   Button,
@@ -13,6 +9,9 @@ import {
   Row,
   SeatDeparture,
   SeatSelect,
+  StyleBottonDeparture,
+  StyledContainer,
+  StyledDate,
   Subtittle,
 } from "./StyleSeatSelectionDeparture";
 

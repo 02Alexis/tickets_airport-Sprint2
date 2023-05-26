@@ -1,10 +1,32 @@
 import styled from "styled-components";
 
-
 export const StyledContainer = styled.div`
   display: flex;
   align-items: center;
   width: 950px;
+
+  @media (max-width: 1200px) {
+    width: 100%;
+    max-width: 800px;
+    position: relative;
+    top: 300px;
+  }
+
+  @media (max-width: 609px) {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    top: 428px;
+  }
+
+  @media (max-width: 375px) {
+    top: 470px;
+   
+  }
 `;
 
 export const StyleBottonDeparture = styled.div`
@@ -26,7 +48,15 @@ export const StyleBottonDeparture = styled.div`
     background-color: #9e1071;
     cursor: pointer;
     color: white;
-    }
+  }
+
+  @media (max-width: 375px) {
+    margin-bottom: 20px;
+    margin-left: -94px;
+    position: relative;
+    top: -19px;
+    z-index: 2;
+  }
 `;
 
 export const StyledDate = styled.div`
@@ -47,9 +77,60 @@ export const StyledDate = styled.div`
     font-weight: bold;
     margin-bottom: 1rem;
   }
+
+  @media (max-width: 1200px) {
+    h2 {
+      position: relative;
+      top: 300px;
+    }
+
+    h4 {
+      position: relative;
+      top: 300px;
+    }
+    p {
+      position: relative;
+      top: 300px;
+    }
+  }
+  @media (max-width: 768px) {
+    h2 {
+      position: relative;
+      top: 380px;
+    }
+
+    h4 {
+      position: relative;
+      top: 380px;
+    }
+    p {
+      position: relative;
+      top: 380px;
+    }
+  }
+  
+
+
+
+  @media (max-width: 375px) {
+   
+    h2 {
+      position: relative;
+      top: 440px;
+    }
+
+    h4 {
+      position: relative;
+      top: 440px;
+    }
+    p {
+      position: relative;
+      top: 420px;
+    }
+  }
 `;
 export const StyleDeparture = styled.div`
-margin-bottom: 3rem;
-background-color: transparent;
-justify-content: space-between;
+  margin-bottom: 3rem;
+  background-color: transparent;
+  justify-content: space-between;
 `;

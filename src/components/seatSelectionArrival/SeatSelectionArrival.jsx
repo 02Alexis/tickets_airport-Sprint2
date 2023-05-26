@@ -9,7 +9,7 @@ import {
   SeatSelectArrival,
   SubtittleArrival,
 } from "./StyleSeatSelectionArrival";
-import { StyleBottonArrivals, StyledContainerArrival, StyledDateArrival } from "../arrivalsFlights/StylesArrivalsFlight";
+import { StyleBottonArrivals, StyledContainerArrival, StyledDateArrival } from  "./StyleSeatSelectionArrival";
 
 const SeatSelectionArrival = () => {
   return (
@@ -21,7 +21,7 @@ const SeatSelectionArrival = () => {
         </StyledContainerArrival>
         <h2>Lunes 11 sept 2023</h2>
         <h4>San Andres, Colombia(ADZ)</h4>
-        <p>Selección de horarios y equipaje</p>
+        <p>Selección de asientos</p>
       </StyledDateArrival>
       
       <ReferentSeatArrival>

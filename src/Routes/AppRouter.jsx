@@ -4,6 +4,7 @@ import App from "../components/app/App";
 import FlightDetail from "../pages/FlightDetail";
 import NotFoundPage from "../pages/NotFoundPage";
 import SeatSelection from "../pages/SeatSelection";
+import PurchasePage from "../pages/PurchasePage";
 
 export const searchParamsContext = createContext({});
 
