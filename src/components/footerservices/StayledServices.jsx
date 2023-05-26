@@ -19,7 +19,7 @@ opacity: 0;
     opacity: 1;
     transform: translateY(0); 
   }
-
+  }
 h3{
  margin-bottom: 1rem; 
 }

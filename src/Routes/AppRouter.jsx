@@ -4,6 +4,7 @@ import App from "../components/app/App";
 import FlightDetail from "../pages/FlightDetail";
 import NotFoundPage from "../pages/NotFoundPage";
 import SeatSelection from "../pages/SeatSelection";
+import PurchasePage from "../pages/PurchasePage";
 
 const AppRouter = () => {
   return (
@@ -14,6 +15,7 @@ const AppRouter = () => {
           <Route path="flightDetail" element={<FlightDetail />}>
             <Route path="seatSelection" element={<SeatSelection />} />
           </Route>
+          <Route path="purchasePage" element={<PurchasePage />} />
         </Route>
         <Route path="*" element={<NotFoundPage />} />
       </Routes>

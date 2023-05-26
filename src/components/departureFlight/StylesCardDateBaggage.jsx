@@ -8,6 +8,26 @@ export const StyleCardDateBaggage = styled.div`
   margin-bottom: 1rem;
   width: 950px;
   background: white;
+
+  @media (max-width: 1200px) {
+    width: 100%;
+    max-width: 800px;
+    position: relative;
+    top: 300px;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    top: 372px;
+  }
+
+  @media (max-width: 375px) {
+    flex-direction: column;
+    align-items: center;
+    top: 419px;
+  }
+
 `;
 
 export const StyleTable = styled.table`
@@ -25,7 +45,25 @@ export const StyleTable = styled.table`
       width: 1px;
       color: rgb(238, 238, 238);
     }
+
+    @media (max-width: 650px) {
+    flex-direction: column;
+    hr{
+      display: none;
+    }
   }
+
+    @media (max-width: 375px) {
+    flex-direction: column;
+    top: 300px;
+    
+    hr{
+      display: none;
+    }
+  }
+  }
+  
+  
 `;
 
 export const StyledTd = styled.td`
@@ -77,4 +115,6 @@ color: ${({ selected }) => (selected ? 'var(--White)' : 'dark')};
 
     }
   }
+ 
 `;
+

@@ -6,7 +6,7 @@ const ReservationFligth = () => {
   return (
    <>
    <Contenedor>
-    <h1>Tu reservacion</h1>
+    <h1>Tu reservación</h1>
     <StyleContainer>
       <StyleFlex>
         <h3>Pasajeros</h3>
