@@ -40,11 +40,28 @@ export const StyleBa = styled.div`
     font-size: 1.3rem;
     margin-bottom: 20px;
   }
+
+  @media screen and (min-width: 1200px){
+    width: 800px;
+  }
+
+  @media screen and (max-width: 768px){
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50%;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  }
+/* 
+ */
 `
 
 export const StyleButton = styled.div`
   background: var(--White);
-  width: 45%;
+  width: 43%;
   border-radius: 5px;
   border: 1px solid;
   border-color: var(--Gray);
@@ -53,15 +70,15 @@ export const StyleButton = styled.div`
 
   button{
     border: none;
-    padding: 10px 20px;
+    padding: 5px 10px;
     font-size: 1rem;
     line-height: 1rem;
     cursor: pointer;
-    background: var(--White);
-  }
-  :hover{
+  margin-right: 5px;
+
+  &:hover{
     color: var(--White);
     background: var(--purple);
-    border-radius: 7px;
+  }
   }
 `

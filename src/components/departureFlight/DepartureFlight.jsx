@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import { StyleBottonDeparture, StyleDeparture, StyledContainer, StyledDate } from "./StylesDeparture";
 import { StyleCardDateBaggage, StyleTable, StyledTd, StyledTdLast  } from "./StylesCardDateBaggage";
 import Briefcase from "./../../assets/briefcase.svg";
 import Scala from "././../../assets/Scala.png"
+import { searchParamsContext } from "../../Routes/AppRouter";
 
 //Recibe dos propiedades: 'selectedContainer' y 'handleContainerClick'.
 //Cada contenedor tiene un prop 'selected' que indica si está seleccionado o no, y un evento 'onClick' que llama a la función 'handleContainerClick' con el índice del contenedor como argumento.
 const DepartureFlight = ({ selectedContainer, handleContainerClick }) => {
+
+  const {
+    filters,
+  } = useContext(searchParamsContext);
+
   return (
     <div>
       <StyledDate>
@@ -15,7 +21,7 @@ const DepartureFlight = ({ selectedContainer, handleContainerClick }) => {
         <StyleBottonDeparture>Cambiar vuelo</StyleBottonDeparture>
         </StyledContainer>
         <h2>Jueves 20 jul 2023</h2>
-        <h4>Medellín, Colombia(MDE)</h4>
+        <h4>{filters.cityorigen}, Colombia(MDE)</h4>
         <p>Selección de horarios y equipaje</p>
       </StyledDate>
       

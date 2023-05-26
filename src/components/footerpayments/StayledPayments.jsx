@@ -14,7 +14,7 @@ padding: 10px;
 border: 1px solid rgb(238, 238, 238);
 padding: 40px 40px 40px;
 margin-bottom: 3rem;
-}
+
 h4 {
     margin-bottom: 1rem;
     font-weight: lighter;
