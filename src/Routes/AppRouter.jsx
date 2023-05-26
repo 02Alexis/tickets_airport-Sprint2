@@ -22,11 +22,11 @@ const AppRouter = () => {
 
   
 
-  const getParamsFronStorage = () => {
-    const params = sessionStorage.getItem("searchParams")? JSON.parse(sessionStorage.getItem("searchParams")) : {};
+  // const getParamsFronStorage = () => {
+  //   const params = sessionStorage.getItem("searchParams")? JSON.parse(sessionStorage.getItem("searchParams")) : {};
 
-    setFilters({...params})
-  }
+  //   setFilters({...params})
+  // }
   return (
     <BrowserRouter>
       <searchParamsContext.Provider
