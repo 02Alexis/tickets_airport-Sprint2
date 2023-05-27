@@ -53,6 +53,7 @@ const AppRouter = () => {
               <Route path="seatSelection" element={<SeatSelection />} />
             </Route>
           </Route>
+          <Route path="purchasePage" element={<PurchasePage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </searchParamsContext.Provider>
