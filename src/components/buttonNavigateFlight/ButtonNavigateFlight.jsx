@@ -17,8 +17,8 @@ const Button = styled.button`
   justify-content: center;
   align-items: center;
 
-  position: fixed;
-  top: 65%;
+  position: absolute;
+  top: 95%;
   right: 6%;
 
   &:hover {

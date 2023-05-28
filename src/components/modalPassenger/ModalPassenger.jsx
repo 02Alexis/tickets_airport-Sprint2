@@ -106,6 +106,7 @@ const ModalPassenger = ({passengers, setPassengers}) => {
 
   //'handleModalConfirm': Esta función se ejecuta al hacer clic en el botón "Confirmar" dentro de la ventana modal. Actualiza el estado 'selectedPassengers' con la cantidad seleccionada de adultos, niños y bebés. Luego, llama a 'toggleModal' para cerrar la ventana modal.
   const handleModalConfirm = () => {
+    console.log("pasajeros",setPassengers);
     toggleModal();
   };
 

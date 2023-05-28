@@ -73,7 +73,7 @@ export const StyledContainerArrival = styled.div`
   }
 `;
 
-export const StyleBottonArrivals = styled.div`
+export const StyleBottonArrivals = styled.button`
   border-radius: 15px;
   border: 1px solid #9e1071;
   background-color: transparent;

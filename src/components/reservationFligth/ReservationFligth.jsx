@@ -1,8 +1,9 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Contenedor, StyleContainer, StyleExit, StyleExit2, StyleFlex, Styletext } from "./StyleReservationFligth";
 import { ContenedorCost, StyleContainerCost, ContainerCost, ColumnCost } from "./StyleFlightCost";
 import Down from '../../img/line.png'
 import { searchParamsContext } from "../../Routes/AppRouter";
+import { getCitiesData } from "../../services/GetFlights";
 
 const ReservationFligth = () => {
 
@@ -10,27 +11,49 @@ const ReservationFligth = () => {
     filters,
   } = useContext(searchParamsContext);
 
+  const [details, setDetails] = useState({});
+
+  useEffect(() => {
+    console.log("datos de filters", filters);
+    getCitiesData(filters.selectedCity).then(response => {
+      console.log("datos de response",response);
+    })
+  }, [filters])
+
   return (
    <>
    <Contenedor>
     <h1>Tu reservación</h1>
     <StyleContainer>
       <StyleFlex>
-        <h3>Pasajeros</h3>
+        <p>Pasajeros</p>
         <h3>1 Adulto</h3>
       </StyleFlex>    
     <p>Vuelo de salida</p>
     <StyleExit>
-      <h1>{filters.date}</h1>
+      <h1>MEX</h1>
       <img src={ Down } alt="underscore"/>
       <h1>CUL</h1>
     </StyleExit>
     <StyleExit2>
-      <p>05:47 PM</p>
+      <p>05:40 PM</p>
       <p></p>
       <p>06:47 PM</p>
     </StyleExit2>
-    <Styletext>Martes, 30 noviembre, 2021</Styletext>
+    <Styletext>{filters.dateDre}</Styletext>
+{/* {filters.passengers} */}
+    <p>Vuelo de regreso</p>
+    <StyleExit>
+      <h1>CUL</h1>
+      <img src={ Down } alt="underscore"/>
+      <h1>MEX</h1>
+    </StyleExit>
+    <StyleExit2>
+      <p>05:40 PM</p>
+      <p></p>
+      <p>06:47 PM</p>
+    </StyleExit2>
+    <Styletext>{filters.date}</Styletext>
     </StyleContainer>
    </Contenedor>
 

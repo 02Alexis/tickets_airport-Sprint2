@@ -95,7 +95,7 @@ export const StyledContainer = styled.div`
   }
 `;
 
-export const StyleBottonDeparture = styled.div`
+export const StyleBottonDeparture = styled.button`
   border-radius: 15px;
   border: 1px solid #9e1071;
   background-color: transparent;

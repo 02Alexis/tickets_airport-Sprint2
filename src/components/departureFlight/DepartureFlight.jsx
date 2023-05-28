@@ -4,6 +4,7 @@ import { StyleCardDateBaggage, StyleTable, StyledTd, StyledTdLast  } from "./Sty
 import Briefcase from "./../../assets/briefcase.svg";
 import Scala from "././../../assets/Scala.png"
 import { searchParamsContext } from "../../Routes/AppRouter";
+import { useNavigate } from 'react-router-dom';
 
 //Recibe dos propiedades: 'selectedContainer' y 'handleContainerClick'.
 //Cada contenedor tiene un prop 'selected' que indica si está seleccionado o no, y un evento 'onClick' que llama a la función 'handleContainerClick' con el índice del contenedor como argumento.
@@ -13,16 +14,18 @@ const DepartureFlight = ({ selectedContainer, handleContainerClick }) => {
     filters,
   } = useContext(searchParamsContext);
 
+  const navigate = useNavigate();
+
   return (
     <div>
       
       <StyledDate>
         <StyledContainer>
         <h1>Vuelo de Salida</h1>
-        <StyleBottonDeparture>Cambiar vuelo</StyleBottonDeparture>
+        <StyleBottonDeparture onClick={() => navigate(-1)}>Cambiar vuelo</StyleBottonDeparture>
         </StyledContainer>
-        <h2>Jueves 20 jul 2023</h2>
-        <h4>{filters.cityorigen}, Colombia(MDE)</h4>
+        <h2>{filters.dateDre}</h2>
+        <h4>{filters.selectedCity}, Colombia(MDE)</h4>
         <p>Selección de horarios y equipaje</p>
       </StyledDate>
       

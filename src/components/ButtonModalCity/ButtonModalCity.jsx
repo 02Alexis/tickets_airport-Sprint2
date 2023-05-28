@@ -83,7 +83,7 @@ const ButtonModalCity = ({ cities, error, selectedCity, setSelectedCity  }) => {
                 .map((city) => (
                   <CityItem
                     key={city.id}
-                    value={city.id}
+                    value={city.cityorigen}
                     onClick={() => handleCityClick(city.cityorigen)}
                   >
                     {city.cityorigen}      {city.initialor}

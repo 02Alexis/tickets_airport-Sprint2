@@ -1,19 +1,27 @@
-import React from "react";
+import React, { useContext } from "react";
 import { StyleArrivals, StyleBottonArrivals, StyledContainerArrival, StyledDateArrival } from "./StylesArrivalsFlight";
 import { StyleTableArrivals, StyledCardDateArrivals, StyledTdArrivals, StyledTdLastArrivals } from "./StyledCardDateArrivals";
 import Briefcase from "./../../assets/briefcase.svg";
 import Scala from "././../../assets/Scala.png"
+import { searchParamsContext } from "../../Routes/AppRouter";
+import { useNavigate } from 'react-router-dom';
 
 const ArrivalsFlight = ({ selectedContainer, handleContainerClick }) => {
+  const navigate = useNavigate();
+
+  const {
+    filters,
+  } = useContext(searchParamsContext);
+
   return (
     <div>
       <StyledDateArrival>
         <StyledContainerArrival>
         <h1>Vuelo de Regreso</h1>
-        <StyleBottonArrivals>Cambiar vuelo</StyleBottonArrivals>
+        <StyleBottonArrivals  onClick={() => navigate(-1)}>Cambiar vuelo</StyleBottonArrivals>
         </StyledContainerArrival>
         <h2>Lunes 11 sept 2023</h2>
-        <h4>San Andres, Colombia(ADZ)</h4>
+        <h4>{filters.selectedCityDon}, Colombia(ADZ)</h4>
         <p>Selección de horarios y equipaje</p>
       </StyledDateArrival>
 
