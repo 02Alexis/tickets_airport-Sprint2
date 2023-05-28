@@ -2,7 +2,9 @@ import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { StyleForm } from "./StyleFormPassenger";
-import Person from "../../assets/used.svg"
+import Person from "../../assets/used.svg";
+
+
 
 const validationSchema = Yup.object().shape({
   username: Yup.string()
@@ -10,6 +12,9 @@ const validationSchema = Yup.object().shape({
     .max(15, "El nombre de usuario no debe tener más de 15 caracteres")
     .required("El nombre de usuario es obligatorio"),
   documentType: Yup.string()
+    .oneOf(["CC", "TI"], "Seleccione un tipo de documento válido")
+    .required("El tipo de documento es obligatorio"),
+  documentId: Yup.string()
     .matches(/^[0-9]+$/, "El documento debe contener solo números")
     .min(10, "El documento debe tener al menos 10 caracteres")
     .max(10, "El documento no debe tener más de 10 caracteres")
@@ -26,30 +31,36 @@ const validationSchema = Yup.object().shape({
   paymentMethod: Yup.string().required("Seleccione el medio de pago"),
 });
 
-export const FormDetailsPassenger = ({ user, handleUser }) => {
+export const FormDetailsPassenger = ({ user, handlePurchase }) => {
   const initialValues = {
-    username: "" | user?.username,
-    documentType: "" | user?.documentType,
-    paymentMethod: "" | user?.paymentMethod, 
-    email: user?.email | "",
-    phone: user?.phone | "",
-    address: user?.address | "",
+    username: user?.username || "",
+    documentType: user?.documentType || "",
+    documentId: user?.documentId || "",
+    paymentMethod: user?.paymentMethod || "",
+    email: user?.email || "",
+    phone: user?.phone || "",
+    address: user?.address || "",
   };
+  
 
   const formik = useFormik({
     initialValues,
     validationSchema,
     onSubmit: (values) => {
-      handleUser(values);
+      handlePurchase(values);
     },
+    
   });
 
   return (
     <div>
       <StyleForm onSubmit={formik.handleSubmit}>
         <div>
-          <h2> <img src={ Person }  alt="person" /> Datos Personales</h2>
-            </div>
+          <h2>
+            {" "}
+            <img src={Person} alt="person" /> Datos Personales
+          </h2>
+        </div>
         <span>Nombre</span>
         <input
           type="text"
@@ -63,7 +74,12 @@ export const FormDetailsPassenger = ({ user, handleUser }) => {
 
         <span>Documento de identidad</span>
 
-        <select name="documentType" {...formik.getFieldProps("documentType")}>
+        <select
+          name="documentType"
+          value={formik.values.documentType}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+        >
           <option value=""></option>
           <option value="CC">CC</option>
           <option value="TI">TI</option>
@@ -76,7 +92,7 @@ export const FormDetailsPassenger = ({ user, handleUser }) => {
         <input
           type="text"
           name="documentId"
-          placeholder="Documento de identidad"
+          placeholder="Número de documento"
           {...formik.getFieldProps("documentId")}
         />
         {formik.touched.documentId && formik.errors.documentId && (
@@ -94,7 +110,7 @@ export const FormDetailsPassenger = ({ user, handleUser }) => {
           <div>{formik.errors.email}</div>
         )}
 
-        <span>Telefono movil</span>
+        <span>Teléfono móvil</span>
         <input
           type="text"
           name="phone"
@@ -117,7 +133,12 @@ export const FormDetailsPassenger = ({ user, handleUser }) => {
         )}
 
         <span>Método de pago</span>
-        <select name="paymentMethod" {...formik.getFieldProps("paymentMethod")}>
+        <select
+          name="paymentMethod"
+          value={formik.values.paymentMethod}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+        >
           <option value=""></option>
           <option value="tarjeta">Tarjeta</option>
           <option value="efectivo">Efectivo</option>

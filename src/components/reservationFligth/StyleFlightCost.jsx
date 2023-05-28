@@ -56,7 +56,7 @@ export const Contenedor = styled.div`
     width: 100%;
   }
 
-  @media (max-width: 659px) {
+  @media (max-width: 500px) {
     position: relative;
     width: 100%;
     top: -3124px;
