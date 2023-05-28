@@ -24,7 +24,9 @@ const AppRouter = () => {
   
 
   // const getParamsFronStorage = () => {
-  //   const params = sessionStorage.getItem("searchParams")? JSON.parse(sessionStorage.getItem("searchParams")) : {};
+  //   const params = sessionStorage.getItem("searchParams")? JSON.parse(sessionStorage.getItem("searchParams")) : {}; 
+  // gggggtrgfgfj
+  //commit 
 
   //   setFilters({...params})
   // }
@@ -61,8 +63,5 @@ const AppRouter = () => {
   );
 };
 
-// test
-
-// test
 
 export default AppRouter;
