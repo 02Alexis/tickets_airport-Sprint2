@@ -34,7 +34,7 @@ export default function SelectHourArrival({hours, date, setDate}) {
         >
           {hours
           .map((hour) => (
-            <MenuItem key={hour.id} value={hour.id}>
+            <MenuItem key={hour.id} value={hour.arrival_date}>
               {hour.arrival_date}
             </MenuItem>
           ))}

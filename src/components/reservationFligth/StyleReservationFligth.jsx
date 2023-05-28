@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Contenedor = styled.div`
-  position: fixed;
+  position: absolute;
   top: 50px;
   right: 80px;
   width: 25%;
@@ -92,7 +92,7 @@ export const Styletext = styled.div`
 export const StyleFlex = styled.div`
   display: flex;
   justify-content: space-between;
-  margin: 10px;
+  margin-bottom: 30px;
 `;
 export const StyleExit = styled.div`
   display: grid;
@@ -114,15 +114,16 @@ export const StyleExit = styled.div`
 
 `;
 export const StyleExit2 = styled.div`
-  displa  @media (max-width: 375px) {
-    h1 {
-    font-size: 1rem;
-  }
-  }y: grid;
+  display: grid;
   grid-template-columns: repeat(3, 0.2fr);
   grid-column-gap: 1px;
   /* grid-row-gap: 1em; */
   margin: 10px;
+    @media (max-width: 375px) {
+    h1 {
+    font-size: 1rem;
+  }
+  }
   p {
     font-size: 13px;
     position: relative;

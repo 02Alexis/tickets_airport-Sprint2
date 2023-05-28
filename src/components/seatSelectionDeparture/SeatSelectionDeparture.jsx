@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from 'react-router-dom';
 
 import {
   Aisle,
@@ -16,13 +17,20 @@ import {
 } from "./StyleSeatSelectionDeparture";
 
 const SeatSelectionDeparture = () => {
+  const navigate = useNavigate();
+
+  const volverAPaginaPrincipal = () => {
+    navigate("/");
+    window.location.reload();
+  };
+
   return (
     <>
     <SeatDeparture>
       <StyledDate>
         <StyledContainer>
           <h1>Vuelo de Salida</h1>
-          <StyleBottonDeparture>Cambiar vuelo</StyleBottonDeparture>
+          <StyleBottonDeparture onClick={volverAPaginaPrincipal}>Cambiar vuelo</StyleBottonDeparture>
         </StyledContainer>
         <h2>Jueves 20 jul 2023</h2>
         <h4>Medellín, Colombia(MDE)</h4>

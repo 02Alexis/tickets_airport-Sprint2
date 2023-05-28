@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const ContenedorCost = styled.div`
-position: fixed;
-top: 40%;
+position: absolute;
+top: 68%;
 right: 80px;
 width: 25%;
  h1{

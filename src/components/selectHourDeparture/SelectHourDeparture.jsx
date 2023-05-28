@@ -35,7 +35,7 @@ export default function SelectHourDeparture({hoursDre, dateDre, setDateDre}) {
         >
         {hoursDre
         .map((hour) => (
-          <MenuItem key={hour.id} value={hour.id}>
+          <MenuItem key={hour.id} value={hour.departure_date}>
             {hour.departure_date}
           </MenuItem>
         ))}

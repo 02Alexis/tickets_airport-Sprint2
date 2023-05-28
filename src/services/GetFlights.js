@@ -15,3 +15,21 @@ export const GetFlights = async () => {
     }
 }
 
+export const getCitiesData = async (initialorDon) => {
+    try {
+
+        const { data } = await axios.get(`${API_FAKE}${endpointFlights}/${initialorDon}`);
+
+        const vuelos = data.flights.find((item) => item.id === initialorDon);
+        console.log("link Start",initialorDon);
+        
+        const infoViaje = {
+            cityOrigen: vuelos.initialor
+        };
+        return infoViaje;
+
+    } catch (error) {
+        console.log(error);
+        return {};
+    }
+}
