@@ -36,7 +36,7 @@ export default function SelectHourDeparture({hoursDre, dateDre, setDateDre}) {
         {hoursDre
         .map((hour) => (
           <MenuItem key={hour.id} value={hour.departure_date}>
-            {hour.departure_date}
+            {hour.departure_date} - {hour.hour}
           </MenuItem>
         ))}
         </StyledSelect>

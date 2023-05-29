@@ -1,24 +1,25 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { Contenedor, StyleContainer, StyleExit, StyleExit2, StyleFlex, Styletext } from "./StyleReservationFligth";
 import { ContenedorCost, StyleContainerCost, ContainerCost, ColumnCost } from "./StyleFlightCost";
 import Down from '../../img/line.png'
 import { searchParamsContext } from "../../Routes/AppRouter";
-import { getCitiesData } from "../../services/GetFlights";
 
-const ReservationFligth = () => {
+
+const ReservationFligth = ({departureTime1, arrivalTime1, departureTime2, arrivalTime2, selectedPrice1, selectedPrice2, totalPrice}) => {
 
   const {
     filters,
   } = useContext(searchParamsContext);
 
-  const [details, setDetails] = useState({});
+  // const [details, setDetails] = useState({});
 
-  useEffect(() => {
-    console.log("datos de filters", filters);
-    getCitiesData(filters.selectedCity).then(response => {
-      console.log("datos de response",response);
-    })
-  }, [filters])
+  // useEffect(() => {
+  //   console.log("datos de filters", filters);
+  //   getCitiesData(filters.selectedCity).then(response => {
+  //     console.log("datos de response",response);
+  //   })
+  // }, [filters])
+
 
   return (
    <>
@@ -27,31 +28,31 @@ const ReservationFligth = () => {
     <StyleContainer>
       <StyleFlex>
         <p>Pasajeros</p>
-        <h3>1 Adulto</h3>
+            <h3>1 Pasajero</h3>
       </StyleFlex>    
     <p>Vuelo de salida</p>
     <StyleExit>
-      <h1>MEX</h1>
+      <h1>{filters.selectedCity.slice(-3)}</h1>
       <img src={ Down } alt="underscore"/>
-      <h1>CUL</h1>
+      <h1>{filters.selectedCityDon.slice(-3)}</h1>
     </StyleExit>
     <StyleExit2>
-      <p>05:40 PM</p>
+      <p>{departureTime1}</p>
       <p></p>
-      <p>06:47 PM</p>
+      <p>{arrivalTime1}</p>
     </StyleExit2>
     <Styletext>{filters.dateDre}</Styletext>
 {/* {filters.passengers} */}
     <p>Vuelo de regreso</p>
     <StyleExit>
-      <h1>CUL</h1>
+      <h1>{filters.selectedCityDon.slice(-3)}</h1>
       <img src={ Down } alt="underscore"/>
-      <h1>MEX</h1>
+      <h1>{filters.selectedCity.slice(-3)}</h1>
     </StyleExit>
     <StyleExit2>
-      <p>05:40 PM</p>
+      <p>{departureTime2}</p>
       <p></p>
-      <p>06:47 PM</p>
+      <p>{arrivalTime2}</p>
     </StyleExit2>
     <Styletext>{filters.date}</Styletext>
     </StyleContainer>
@@ -63,17 +64,17 @@ const ReservationFligth = () => {
       <ContainerCost>
         <div>
           <p>Tarida base</p>
+          <p>Tarifa base equipaje 2</p>
           <p>Descuento Promocional</p>
-          <p>Tarifa base con descuento</p>
           <p>IVA Tarifa</p>
           <h3>Total</h3>
         </div>
         <ColumnCost>
-          <p>$1,505 MXN</p>
-          <p>$1,034 MXN</p>
+          <p>${selectedPrice1}</p>
+          <p>${selectedPrice2}</p>
           <p>$471 MXN</p>
           <p>$75 MXN</p>
-          <h3>$75 MXN</h3>
+          <h3>${totalPrice}</h3>
         </ColumnCost>
       </ContainerCost>
      </StyleContainerCost>

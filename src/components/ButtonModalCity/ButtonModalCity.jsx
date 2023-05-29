@@ -40,7 +40,7 @@ const ButtonModalCity = ({ cities, error, selectedCity, setSelectedCity  }) => {
   return (
     <>
       <ContainerCity  onClick={openModal}>
-        {selectedCity ? <h1>Ciudad de {selectedCity}</h1> : <h1>---</h1>} 
+        {selectedCity ? <h1>{selectedCity}</h1> : <h1>---</h1>} 
         <p>Origen</p>     
       </ContainerCity>
       
@@ -83,8 +83,8 @@ const ButtonModalCity = ({ cities, error, selectedCity, setSelectedCity  }) => {
                 .map((city) => (
                   <CityItem
                     key={city.id}
-                    value={city.cityorigen}
-                    onClick={() => handleCityClick(city.cityorigen)}
+                    value={`${city.cityorigen}`}
+                    onClick={() => handleCityClick(`${city.cityorigen} ${city.initialor}`)}
                   >
                     {city.cityorigen}      {city.initialor}
                   </CityItem>
