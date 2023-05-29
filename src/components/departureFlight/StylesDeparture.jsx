@@ -24,7 +24,7 @@ export const StyledContainer = styled.div`
   }
 
   @media (max-width: 375px) {
-    top: 470px;
+    top: 669px;
    
   }
 `;
@@ -93,7 +93,7 @@ export const StyledDate = styled.div`
       top: 300px;
     }
   }
-  @media (max-width: 768px) {
+  /* @media (max-width: 768px) {
     h2 {
       position: relative;
       top: 380px;
@@ -107,25 +107,24 @@ export const StyledDate = styled.div`
       position: relative;
       top: 380px;
     }
-  }
+  } */
   
 
 
 
   @media (max-width: 375px) {
-   
     h2 {
       position: relative;
-      top: 440px;
+      top: 654px;
     }
 
     h4 {
       position: relative;
-      top: 440px;
+      top: 670px;
     }
     p {
       position: relative;
-      top: 420px;
+      top: 670px;
     }
   }
 `;

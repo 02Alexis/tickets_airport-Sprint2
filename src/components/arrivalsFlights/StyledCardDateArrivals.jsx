@@ -19,10 +19,11 @@ background: white;
   @media (max-width: 768px) {
     flex-direction: column;
     align-items: center;
+    top: 370px;
   }
  
-  @media (max-width: 768px) {
-    top: 370px;
+  @media (max-width: 375px) {
+    top: 639px;
   }
 
 
