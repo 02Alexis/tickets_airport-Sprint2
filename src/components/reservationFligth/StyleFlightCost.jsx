@@ -27,6 +27,10 @@ export const ColumnCost = styled.div`
 justify-self: end;
 grid-row-gap: 1em;
 `
+export const ContainerCostIva = styled.p`
+color: green;
+`
+
 
 export const Contenedor = styled.div`
   position: fixed;

@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 
 //Recibe dos propiedades: 'selectedContainer' y 'handleContainerClick'.
 //Cada contenedor tiene un prop 'selected' que indica si está seleccionado o no, y un evento 'onClick' que llama a la función 'handleContainerClick' con el índice del contenedor como argumento.
-const DepartureFlight = ({ selectedContainer, handleContainerClick }) => {
+const DepartureFlight = ({ handleDepartureClick, selectedButton1 }) => {
 
   const {
     filters,
@@ -37,13 +37,13 @@ const DepartureFlight = ({ selectedContainer, handleContainerClick }) => {
               <StyledTd><span>2 h 30 min</span> <img src={ Scala }  alt="Escala" /> <span>sin escalas</span> </StyledTd>
               <StyledTd><h2>6:47 PM</h2></StyledTd>
               <hr />
-              <StyledTdLast selected={selectedContainer === 0} onClick={() => handleContainerClick(0)}>
+              <StyledTdLast isSelected={selectedButton1 === '60.00'} onClick={() => handleDepartureClick("05:50", "06:47", "60.00")}>
                 <img src={ Briefcase }  alt="Briefcase" /> <span>1 objeto personal</span><h4>$ 60.000 COP</h4>
               </StyledTdLast>
-              <StyledTdLast selected={selectedContainer === 1} onClick={() => handleContainerClick(1)}>
+              <StyledTdLast  isSelected={selectedButton1 === '90.00'} onClick={() => handleDepartureClick("05:50", "06:47", "90.00")}>
                 <img src={ Briefcase }  alt="Briefcase" /> <span>Equipaje de mano</span><h4>$ 90.000 COP</h4>
               </StyledTdLast>
-              <StyledTdLast selected={selectedContainer === 2} onClick={() => handleContainerClick(2)}>
+              <StyledTdLast  isSelected={selectedButton1 === '120.00'} onClick={() => handleDepartureClick("05:50", "06:47", "120.00")}>
                 <img src={ Briefcase }  alt="Briefcase" /> <span> Equiaje 25kg</span><h4>$ 120.000 COP</h4>
               </StyledTdLast>
             </tr>
@@ -57,13 +57,13 @@ const DepartureFlight = ({ selectedContainer, handleContainerClick }) => {
               <StyledTd><span>1 h 57 min</span> <img src={ Scala }  alt="Escala" /> <span>sin escalas</span> </StyledTd>
               <StyledTd><h2>9:47 PM</h2></StyledTd>
               <hr />
-              <StyledTdLast selected={selectedContainer === 3} onClick={() => handleContainerClick(3)}>
+              <StyledTdLast isSelected={selectedButton1 === '60.000'} onClick={() => handleDepartureClick("08:50", "09:47", "60.000")}>
                 <img src={ Briefcase }  alt="Briefcase" /> <span>1 objeto personal</span><h4>$ 60.000 COP</h4>
               </StyledTdLast>
-              <StyledTdLast selected={selectedContainer === 4} onClick={() => handleContainerClick(4)}>
+              <StyledTdLast isSelected={selectedButton1 === '90.000'} onClick={() => handleDepartureClick("08:50", "09:47", "90.000")}>
                 <img src={ Briefcase }  alt="Briefcase" /> <span>Equipaje de mano</span><h4>$ 90.000 COP</h4>
               </StyledTdLast>
-              <StyledTdLast selected={selectedContainer === 5} onClick={() => handleContainerClick(5)}>
+              <StyledTdLast isSelected={selectedButton1 === '120.000'} onClick={() => handleDepartureClick("08:50", "09:47", "120.000")}>
                 <img src={ Briefcase }  alt="Briefcase" /> <span> Equiaje 25kg</span><h4>$ 120.000 COP</h4>
               </StyledTdLast>
             </tr>
