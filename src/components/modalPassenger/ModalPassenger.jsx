@@ -92,6 +92,7 @@ const ModalPassenger = ({passengers, setPassengers}) => {
       ...prevPassengers,
       [type]: prevPassengers[type] + 1,
     }));
+    console.log(passengers)
   };
 
   //'decreasePassengerCount': Esta función se encarga de disminuir la cantidad de pasajeros de un tipo específico (adultos, niños o bebés). Recibe como parámetro el tipo de pasajero y verifica si la cantidad actual es mayor a 0 antes de disminuirlo utilizando 'setAdults', 'setChildren' o 'setBabies'.

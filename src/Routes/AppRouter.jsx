@@ -19,14 +19,21 @@ const AppRouter = () => {
     babies: 0,
   });
 
+  // estados de la pagina detalles de vuelo
+  const [departureTime1, setDepartureTime1] = useState("");
+  const [arrivalTime1, setArrivalTime1] = useState("");
+  const [selectedPrice1, setSelectedPrice1] = useState("");
+  const [departureTime2, setDepartureTime2] = useState("");
+  const [arrivalTime2, setArrivalTime2] = useState("");
+  const [selectedPrice2, setSelectedPrice2] = useState("");
+  const [totalPrice, setTotalPrice] = useState("");
+
   const [filters, setFilters] = useState({});
 
-  
-
   // const getParamsFronStorage = () => {
-  //   const params = sessionStorage.getItem("searchParams")? JSON.parse(sessionStorage.getItem("searchParams")) : {}; 
+  //   const params = sessionStorage.getItem("searchParams")? JSON.parse(sessionStorage.getItem("searchParams")) : {};
   // gggggtrgfgfj
-  //commit 
+  //commit
 
   //   setFilters({...params})
   // }
@@ -46,6 +53,21 @@ const AppRouter = () => {
           setPassengers,
           filters,
           setFilters,
+
+          departureTime1,
+          setDepartureTime1,
+          arrivalTime1,
+          setArrivalTime1,
+          selectedPrice1,
+          setSelectedPrice1,
+          departureTime2,
+          setDepartureTime2,
+          arrivalTime2,
+          setArrivalTime2,
+          selectedPrice2,
+          setSelectedPrice2,
+          totalPrice,
+          setTotalPrice,
         }}
       >
         <Routes>
@@ -62,6 +84,5 @@ const AppRouter = () => {
     </BrowserRouter>
   );
 };
-
 
 export default AppRouter;

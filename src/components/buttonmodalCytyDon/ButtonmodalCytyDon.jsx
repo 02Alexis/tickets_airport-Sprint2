@@ -83,8 +83,8 @@ const ButtonmodalCytyDon = ({ citiesDon, error, selectedCityDon, setSelectedCity
                 .map((city) => (
                   <CityItem
                     key={city.id}
-                    value={city.id}
-                    onClick={() => handleCityClick(city.destination)}
+                    value={`${city.destination}`}
+                    onClick={() => handleCityClick(`${city.destination} ${city.initialorDon}`)}
                   >
                     {city.destination}   {city.initialorDon}
                   </CityItem>
