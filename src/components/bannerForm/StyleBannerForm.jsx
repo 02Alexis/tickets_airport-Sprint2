@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const StyleBa = styled.div`
   margin-left: -250px;
@@ -7,15 +7,11 @@ export const StyleBa = styled.div`
   padding: 10px 20px;
   background: var(--DarkGry);
   width: 800px;
-  box-sizing: 0 5px 25px rgba(0,0,0,0.1);
+  box-sizing: 0 5px 25px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
   transition: 0.5s;
-  box-shadow:0 10px 20px -10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.2);
   border: 1px solid #ddd;
-  
-  @media (max-width: 375px) {
-    background-color: red;
-  }
 
   opacity: 0; /* Establecer la opacidad inicial en 0 */
   animation-name: fadeIn; /* Nombre de la animación */
@@ -23,15 +19,15 @@ export const StyleBa = styled.div`
   animation-timing-function: ease-in; /* Función de temporización de la animación */
   animation-fill-mode: forwards; /* Mantener el estado final de la animación */
   @keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(10px); /* Animación de desplazamiento hacia abajo */
+    0% {
+      opacity: 0;
+      transform: translateY(10px); /* Animación de desplazamiento hacia abajo */
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0); /* Animación de desplazamiento hacia arriba */
+    }
   }
-  100% {
-    opacity: 1;
-    transform: translateY(0); /* Animación de desplazamiento hacia arriba */
-  }
-}
   h1 {
     width: 100%;
     font-size: 3rem;
@@ -45,25 +41,29 @@ export const StyleBa = styled.div`
     margin-bottom: 20px;
   }
 
-  @media screen and (min-width: 1200px){
-    width: 800px;
+  @media screen and (max-width: 375px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 120%;
+    width: 142%;
+    background-color: white;
+    z-index: 1;
+    top: 28px;
+    left: 289px;
+    
+    h1 {
+      width: 97%;
+      font-size: 1.5rem;
+      line-height: 1.7rem;
+    }
+    p{
+      font-size: 1rem;
+    }
   }
 
-  @media screen and (max-width: 768px){
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 50%;
-  width: 100%;
-  max-width: 400px;
-  margin: 0 auto;
-  }
 
-  
-/* 
- */
-`
+`;
 
 export const StyleButton = styled.div`
   background: var(--White);
@@ -74,17 +74,21 @@ export const StyleButton = styled.div`
   padding: 10px 20px;
   margin-bottom: 20px;
 
-  button{
+  button {
     border: none;
     padding: 5px 10px;
     font-size: 1rem;
     line-height: 1rem;
     cursor: pointer;
-  margin-right: 5px;
+    margin-right: 5px;
 
-  &:hover{
-    color: var(--White);
-    background: var(--purple);
+    &:hover {
+      color: var(--White);
+      background: var(--purple);
+    }
   }
+
+  @media screen and (max-width: 375px) {
+    width: 98%;
   }
-`
+`;

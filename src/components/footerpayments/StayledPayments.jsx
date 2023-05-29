@@ -36,7 +36,7 @@ export const StayledArticle = styled.article`
     flex-direction: column;
     display: flex;
     justify-content: space-between;
-    width: 200%;
+    width: 185%;
     gap: 35px;
     top: 35px;
     position: relative;

@@ -1,22 +1,30 @@
 import React from 'react';
 import { FormDetailsPassenger } from './FormPassenger';
 import { post } from '../../services/PurchasePassenger';
+import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const PurchaseDetailsPassenger = () => {
-  const recivePurchaseDetailsPassenger = async (newPurchase) => {
+  const navigate = useNavigate();
+  const handlePurchase = async (formData) => {
     try {
-      await post('/compra', newPurchase);
-      console.log(newPurchase);
-      alert('¡Compra realizada!');
+      console.log(formData); // Agregar esta línea para imprimir los datos en la consola
+      await post('/compra', formData);
+      Swal.fire('¡Compra realizada!', '', 'success').then(() => {
+        navigate('/ticket'); // Ruta a la que deseas redirigir después de la compra exitosa
+      });
+      
+    
     } catch (error) {
       console.log(error);
-      alert('Hubo un error al procesar la compra.');
+      Swal.fire('Hubo un error al procesar la compra.', '', 'error');
     }
   };
 
+  
   return (
     <>
-      <FormDetailsPassenger handlePurchase={recivePurchaseDetailsPassenger} />
+      <FormDetailsPassenger handlePurchase={handlePurchase} />
     </>
   );
 };
@@ -24,41 +32,3 @@ const PurchaseDetailsPassenger = () => {
 export default PurchaseDetailsPassenger;
 
 
-// import React from 'react';
-// import { FormDetailsPassenger } from './FormPassenger';
-// import { post } from '../../services/PurchasePassenger';
-
-// const PurchaseDetailsPassenger = () => {
-//   const recivePurchaseDetailsPassenger = async (newPurchase) => {
-//     console.log(newPurchase);
-
-//     await post('/passengers', newPurchase);
-//     alert('¡Lista tu compra!');
-//   };
-
-//   return (
-//     <>
-//       <FormDetailsPassenger handlePurchase={recivePurchaseDetailsPassenger} />
-//     </>
-//   );
-// };
-
-// export default PurchaseDetailsPassenger;
-
-
-
-
-
-
-// import React from 'react'
-// import { FormDetailsPassenger } from './FormPassenger'
-
-// const PurchaseDetailsPassenger= () => {
-//   return (
-//     <>
-//     <FormDetailsPassenger />
- 
-//      </>
-//   )
-// }
-// export default PurchaseDetailsPassenger

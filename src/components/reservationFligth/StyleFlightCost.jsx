@@ -23,7 +23,7 @@ width: 25%;
     flex-direction: column;
     width: 100%;
     position: relative;
-    top: -3190px;
+    top: -3163px;
     right: 2px;
   } 
 `

@@ -46,7 +46,7 @@ const Button = styled.button`
 
   @media (max-width: 375px) {
     position: relative;
-    top: 646px;
+    top: 598px;
     width: 100%;
     z-index: 2;
     left: -2px;

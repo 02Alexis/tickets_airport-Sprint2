@@ -5,6 +5,7 @@ import FlightDetail from "../pages/FlightDetail";
 import NotFoundPage from "../pages/NotFoundPage";
 import SeatSelection from "../pages/SeatSelection";
 import PurchasePage from "../pages/PurchasePage";
+import Ticket from "../pages/Ticket"
 
 export const searchParamsContext = createContext({});
 
@@ -78,6 +79,7 @@ const AppRouter = () => {
             </Route>
           </Route>
           <Route path="purchasePage" element={<PurchasePage />} />
+          <Route path="ticket" element={<Ticket />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </searchParamsContext.Provider>
