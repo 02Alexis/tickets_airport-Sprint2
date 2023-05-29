@@ -10,4 +10,12 @@ export const StyleBa = styled.div`
     border-radius: 30px;
     margin-left: 250px;
     margin-bottom: 4.5rem;
+
+    @media screen and (max-width: 375px) {
+        background: none;
+    }
+
+    @media screen and (max-width: 900px) {
+        background: none;
+    }
 `
