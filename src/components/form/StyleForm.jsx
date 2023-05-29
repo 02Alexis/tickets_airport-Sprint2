@@ -5,6 +5,7 @@ export const StyleForm = styled.div`
    grid-template-columns: repeat(2, 1fr);
    grid-column-gap: 20px;
    grid-row-gap: 1em;
+
 `
 
 export const Container = styled.div`
@@ -40,6 +41,7 @@ export const ContainerTwo = styled.div`
   color: #000;
   margin-left: 40px;
   }
+  
  
 `
 export const StyledContainer = styled.div`

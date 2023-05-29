@@ -9,16 +9,13 @@ export const Contenedor = styled.div`
     font-size: 1.2rem;
     margin-bottom: 10px;
   }
-  @media (max-width: 1200px) {
+ 
+
+  @media (max-width: 900px) {
     position: relative;
     top: -1234px;
     left: -1px;
     width: 44%;
-  }
-
-  @media (max-width: 900px) {
-   left: -1px;
-   width: 80%;
   }
   @media (max-width: 522px){
     display: flex;
@@ -39,40 +36,6 @@ export const Contenedor = styled.div`
     }
   }
 
-/* 
- @media (max-width: 758px) {
-    position: relative;
-   
-    left: -1px;
-    width: 100%;
-  }
-@media (max-width: 659px) {
-  
-    position: relative;
-    top: -3139px;
-    left: -1px;
-    width: 100%;
-  }
-
-
-  @media (max-width: 500px) {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-
-  @media (max-width: 375px) {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    top: -3176px;
-
-
-    h3{
-      font-size: 0.8rem;
-    }
-    
-  } */
 `;
 
 export const StyleContainer = styled.div`

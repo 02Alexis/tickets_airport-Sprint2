@@ -12,6 +12,10 @@ export const StyleBa = styled.div`
   transition: 0.5s;
   box-shadow:0 10px 20px -10px rgba(0, 0, 0, 0.2);
   border: 1px solid #ddd;
+  
+  @media (max-width: 375px) {
+    background-color: red;
+  }
 
   opacity: 0; /* Establecer la opacidad inicial en 0 */
   animation-name: fadeIn; /* Nombre de la animación */
@@ -55,6 +59,8 @@ export const StyleBa = styled.div`
   max-width: 400px;
   margin: 0 auto;
   }
+
+  
 /* 
  */
 `

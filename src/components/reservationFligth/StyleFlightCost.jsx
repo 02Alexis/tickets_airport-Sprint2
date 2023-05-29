@@ -59,12 +59,12 @@ export const Contenedor = styled.div`
     font-size: 1.2rem;
     margin-bottom: 10px;
   }
-  @media (max-width: 1200px) {
+  /* @media (max-width: 1200px) {
     position: relative;
     top: -1403px;
     width: 45%;
     right: -356px;
-  }
+  } */
 
 
 /* 
