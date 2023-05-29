@@ -25,7 +25,7 @@ export const StyleCardDateBaggage = styled.div`
   @media (max-width: 375px) {
     flex-direction: column;
     align-items: center;
-    top: 419px;
+    top: 685px;
   }
 
 `;

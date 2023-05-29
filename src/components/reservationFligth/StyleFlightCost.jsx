@@ -9,7 +9,27 @@ width: 25%;
   font-size: 1.2rem;
   margin-bottom: 10px;    
  }
+
+ /* @media (max-width: 900px) {
+  position: relative;
+    top: -3500px;
+    right: -402px;
+    width: 50%;
+  } */
+
+  
+  @media (max-width: 375px) {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+    top: -3190px;
+    right: 2px;
+  } 
 `
+
+
+
 export const StyleContainerCost = styled.div`
 border-radius: 5px;
 background-color: white;
@@ -22,7 +42,9 @@ padding: 10px;
 p{
     margin-bottom: 10px;
 }
+
 `
+
 export const ColumnCost = styled.div`
 justify-self: end;
 grid-row-gap: 1em;
@@ -43,12 +65,9 @@ export const Contenedor = styled.div`
     width: 45%;
     right: -356px;
   }
-  @media (max-width: 828px) {
-    position: relative;
-    top: -1475px;
-    right: -348px;
-  }
 
+
+/* 
   @media (max-width: 758px) {
     position: relative;
     top: -1345px;
@@ -69,7 +88,7 @@ export const Contenedor = styled.div`
     position: relative;
     top: -3158px;
     right: 2px;
-  }
+  } */
 `;
 
 export const StyleContainer = styled.div`

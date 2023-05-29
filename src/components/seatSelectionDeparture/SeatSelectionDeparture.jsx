@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useNavigate } from 'react-router-dom';
 
 import {
@@ -15,6 +15,7 @@ import {
   StyledDate,
   Subtittle,
 } from "./StyleSeatSelectionDeparture";
+import { searchParamsContext } from "../../Routes/AppRouter";
 
 const SeatSelectionDeparture = () => {
   const navigate = useNavigate();
@@ -23,6 +24,9 @@ const SeatSelectionDeparture = () => {
     navigate("/");
     window.location.reload();
   };
+  const {
+    filters,
+  } = useContext(searchParamsContext);
 
   return (
     <>
@@ -32,8 +36,8 @@ const SeatSelectionDeparture = () => {
           <h1>Vuelo de Salida</h1>
           <StyleBottonDeparture onClick={volverAPaginaPrincipal}>Cambiar vuelo</StyleBottonDeparture>
         </StyledContainer>
-        <h2>Jueves 20 jul 2023</h2>
-        <h4>Medellín, Colombia(MDE)</h4>
+        <h2>{filters.dateDre}</h2>
+        <h4>{filters.selectedCity}, Colombia(MDE)</h4>
         <p>Selecciona tus asientos</p>
       </StyledDate>
       <ReferenSeat>

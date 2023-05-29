@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   AisleArrival,
   ButtonArrival,
@@ -10,8 +10,13 @@ import {
   SubtittleArrival,
 } from "./StyleSeatSelectionArrival";
 import { StyleBottonArrivals, StyledContainerArrival, StyledDateArrival } from  "./StyleSeatSelectionArrival";
+import { searchParamsContext } from "../../Routes/AppRouter";
 
 const SeatSelectionArrival = () => {
+  const {
+    filters,
+  } = useContext(searchParamsContext);
+
   return (
     <>
      <StyledDateArrival>
@@ -19,8 +24,8 @@ const SeatSelectionArrival = () => {
         <h1>Vuelo de Regreso</h1>
         <StyleBottonArrivals>Cambiar vuelo</StyleBottonArrivals>
         </StyledContainerArrival>
-        <h2>Lunes 11 sept 2023</h2>
-        <h4>San Andres, Colombia(ADZ)</h4>
+        <h2>{filters.date}</h2>
+        <h4>{filters.selectedCityDon}, Colombia(ADZ)</h4>
         <p>Selección de asientos</p>
       </StyledDateArrival>
       
