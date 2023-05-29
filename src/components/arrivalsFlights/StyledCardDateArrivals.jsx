@@ -84,13 +84,13 @@ text-align: center;
 border: 1px solid #ccc;
 align-items: center;
 border-radius: 8px;
-background-color: ${({ selected }) => (selected ? 'var(--purple)' : 'withe')};
-color: ${({ selected }) => (selected ? 'var(--White)' : 'dark')};
+background-color: ${({ isSelected }) => (isSelected ? 'var(--purple)' : 'withe')};
+color: ${({ isSelected }) => (isSelected ? 'var(--White)' : 'dark')};
 
 img {
   margin-bottom: 1rem;
   transition: filter 0.3s;
-  filter: ${({ selected }) => (selected ? 'invert(100%)' : 'none')};
+  filter: ${({ isSelected }) => (isSelected ? 'invert(100%)' : 'none')};
     }
 
 span {

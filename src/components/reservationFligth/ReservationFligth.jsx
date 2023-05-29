@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Contenedor, StyleContainer, StyleExit, StyleExit2, StyleFlex, Styletext } from "./StyleReservationFligth";
-import { ContenedorCost, StyleContainerCost, ContainerCost, ColumnCost } from "./StyleFlightCost";
+import { ContenedorCost, StyleContainerCost, ContainerCost, ContainerCostIva, ColumnCost } from "./StyleFlightCost";
 import Down from '../../img/line.png'
 import { searchParamsContext } from "../../Routes/AppRouter";
 
@@ -37,9 +37,9 @@ const ReservationFligth = ({departureTime1, arrivalTime1, departureTime2, arriva
       <h1>{filters.selectedCityDon.slice(-3)}</h1>
     </StyleExit>
     <StyleExit2>
-      <p>{departureTime1}</p>
+      <p>{filters.departureTime1}</p>
       <p></p>
-      <p>{arrivalTime1}</p>
+      <p>{filters.arrivalTime1}</p>
     </StyleExit2>
     <Styletext>{filters.dateDre}</Styletext>
 {/* {filters.passengers} */}
@@ -50,9 +50,9 @@ const ReservationFligth = ({departureTime1, arrivalTime1, departureTime2, arriva
       <h1>{filters.selectedCity.slice(-3)}</h1>
     </StyleExit>
     <StyleExit2>
-      <p>{departureTime2}</p>
+      <p>{filters.departureTime2}</p>
       <p></p>
-      <p>{arrivalTime2}</p>
+      <p>{filters.arrivalTime2}</p>
     </StyleExit2>
     <Styletext>{filters.date}</Styletext>
     </StyleContainer>
@@ -66,15 +66,15 @@ const ReservationFligth = ({departureTime1, arrivalTime1, departureTime2, arriva
           <p>Tarida base</p>
           <p>Tarifa base equipaje 2</p>
           <p>Descuento Promocional</p>
-          <p>IVA Tarifa</p>
+          <ContainerCostIva>IVA Tarifa</ContainerCostIva>
           <h3>Total</h3>
         </div>
         <ColumnCost>
-          <p>${selectedPrice1}</p>
-          <p>${selectedPrice2}</p>
+          <p>${filters.selectedPrice1}</p>
+          <p>${filters.selectedPrice2}</p>
           <p>$471 MXN</p>
-          <p>$75 MXN</p>
-          <h3>${totalPrice}</h3>
+          <ContainerCostIva>$75 MXN</ContainerCostIva>
+          <h3>${filters.totalPrice}</h3>
         </ColumnCost>
       </ContainerCost>
      </StyleContainerCost>

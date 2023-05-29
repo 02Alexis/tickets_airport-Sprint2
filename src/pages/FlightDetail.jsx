@@ -13,13 +13,10 @@ import Swal from "sweetalert2";
 const FlightDetail = () => {
   const [isLoading, setIsLoading] = useState(true); // Estado para controlar si la página está cargando o no
 
-  // const [departureTime1, setDepartureTime1] = useState("");
-  // const [arrivalTime1, setArrivalTime1] = useState("");
-  // const [selectedPrice1, setSelectedPrice1] = useState("");
-  // const [departureTime2, setDepartureTime2] = useState("");
-  // const [arrivalTime2, setArrivalTime2] = useState("");
-  // const [selectedPrice2, setSelectedPrice2] = useState("");
-  // const [totalPrice, setTotalPrice] = useState("");
+  const [selectedButton1, setSelectedButton1] = useState(null);
+  const [selectedButton2, setSelectedButton2] = useState(null);
+  const [iva, setIva] = useState(16);
+
   const navigate = useNavigate();
   const {
     selectedCity,
@@ -62,7 +59,11 @@ const FlightDetail = () => {
       !selectedPrice2 ||
       !totalPrice
     ) {
-      Swal.fire("Oopss!", "No has completado todos los datos, por favor selecciona un tipo de equipaje", "error");
+      Swal.fire(
+        "Oopss!",
+        "No has completado todos los datos, por favor selecciona un tipo de equipaje",
+        "error"
+      );
     } else {
       const params = {
         selectedCity,
@@ -80,13 +81,15 @@ const FlightDetail = () => {
         totalPrice,
       };
       setFilters(params);
-      Swal.fire("Good job!", "Genial, datos Confirmados, es hora de seleccionar tus asientos", "success").then(
-        () => {
-          sessionStorage.setItem("searchParams", JSON.stringify(params));
-          navigate("/flightDetail/seatSelection");
-          setShowFlightDetail(true);
-        }
-      );
+      Swal.fire(
+        "Good job!",
+        "Genial, datos Confirmados, es hora de seleccionar tus asientos",
+        "success"
+      ).then(() => {
+        sessionStorage.setItem("searchParams", JSON.stringify(params));
+        navigate("/flightDetail/seatSelection");
+        setShowFlightDetail(true);
+      });
     }
   };
 
@@ -94,6 +97,7 @@ const FlightDetail = () => {
     setDepartureTime1(departure);
     setArrivalTime1(arrival);
     setSelectedPrice1(price);
+    setSelectedButton1(price);
     calculateTotalPrice(price, selectedPrice2);
   };
 
@@ -101,6 +105,7 @@ const FlightDetail = () => {
     setDepartureTime2(departure);
     setArrivalTime2(arrival);
     setSelectedPrice2(price);
+    setSelectedButton2(price);
     calculateTotalPrice(selectedPrice1, price);
   };
 
@@ -108,10 +113,6 @@ const FlightDetail = () => {
     const total = parseFloat(price1) + parseFloat(price2);
     setTotalPrice(total.toFixed(2));
   };
-
-  //Hacemos uso de 2 estados 'selectedContainer1' y 'selectedContainer2' para realizar un seguimiento de los contenedores seleccionados en los componentes
-  const [selectedContainer1, setSelectedContainer1] = useState(null);
-  const [selectedContainer2, setSelectedContainer2] = useState(null);
 
   const [showFlightDetails, setShowFlightDetail] = useState(false);
   let location = useLocation();
@@ -126,24 +127,6 @@ const FlightDetail = () => {
       setShowFlightDetail(false);
     }
   }, [showFlightDetails, location]);
-
-  //'handleContainerClick1' y 'handleContainerClick2' son funciones que se llaman cuando se hace clic en un contenedor en los componentes anteriores, respectivamente. Estas funciones actualizan los estados 'selectedContainer1' y 'selectedContainer2' con el índice del contenedor seleccionado.
-  // Manejar la selección de contenedor del primer componente
-  const handleContainerClick1 = (containerIndex) => {
-    setSelectedContainer1(containerIndex);
-    handleDepartureClick("05:50", "06:47", "90.00");
-  };
-
-  // Manejar la selección de contenedor del segundo componente
-  const handleContainerClick2 = (containerIndex) => {
-    setSelectedContainer2(containerIndex);
-    handleArrivalClick("07:25", "09:47", "90.00");
-  };
-
-  //El botón 'ButtonNavigateFlight' se muestra solo cuando se han seleccionado contenedores en ambos componentes.
-  // Verificar si se debe mostrar el botón
-  //Calcula la variable showButton que indica si se deben mostrar el botón. Esto sucede cuando ambos conjuntos de contenedores tienen una selección.
-  const showButton = selectedContainer1 !== null && selectedContainer2 !== null;
 
   //Renderizamos el contenido condicionalmente: Si 'isLoading' es true, se muestra el componente 'LoadingComponent', que representa la animación de carga con el avión volando. Si 'isLoading' es false, se muestra el contenido de la página.
   return (
@@ -161,16 +144,15 @@ const FlightDetail = () => {
                 <CustomPageStyles />
                 <ButtonNavigateFlight
                   handleButtonNavigateSelection={handleButtonNavigateSelection}
-                  show={showButton}
                   showSeatSelection={setShowFlightDetail}
                 />
                 <DepartureFlight
-                  selectedContainer={selectedContainer1}
-                  handleContainerClick={handleContainerClick1}
+                  selectedButton1={selectedButton1}
+                  handleDepartureClick={handleDepartureClick}
                 />
                 <ArrivalsFlight
-                  selectedContainer={selectedContainer2}
-                  handleContainerClick={handleContainerClick2}
+                  selectedButton2={selectedButton2}
+                  handleArrivalClick={handleArrivalClick}
                 />
                 <ReservationFligth
                   departureTime1={departureTime1}
