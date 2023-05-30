@@ -4,8 +4,6 @@ import * as Yup from "yup";
 import { StyleForm } from "./StyleFormPassenger";
 import Person from "../../assets/used.svg";
 
-
-
 const validationSchema = Yup.object().shape({
   username: Yup.string()
     .min(3, "El nombre de usuario debe tener al menos 3 caracteres")
@@ -16,7 +14,7 @@ const validationSchema = Yup.object().shape({
     .required("El tipo de documento es obligatorio"),
   documentId: Yup.string()
     .matches(/^[0-9]+$/, "El documento debe contener solo números")
-    .min(10, "El documento debe tener al menos 10 caracteres")
+    .min(8, "El documento debe tener al menos 8 caracteres")
     .max(10, "El documento no debe tener más de 10 caracteres")
     .required("El documento es obligatorio"),
   email: Yup.string()
@@ -41,7 +39,6 @@ export const FormDetailsPassenger = ({ user, handlePurchase }) => {
     phone: user?.phone || "",
     address: user?.address || "",
   };
-  
 
   const formik = useFormik({
     initialValues,
@@ -49,7 +46,6 @@ export const FormDetailsPassenger = ({ user, handlePurchase }) => {
     onSubmit: (values) => {
       handlePurchase(values);
     },
-    
   });
 
   return (
@@ -68,8 +64,8 @@ export const FormDetailsPassenger = ({ user, handlePurchase }) => {
           placeholder="Nombre de usuario"
           {...formik.getFieldProps("username")}
         />
-        {formik.touched.username && formik.errors.username && (
-          <div>{formik.errors.username}</div>
+          {formik.touched.username && formik.errors.username && (
+          <div className="error-message">{formik.errors.username}</div>
         )}
 
         <span>Documento de identidad</span>
@@ -86,7 +82,7 @@ export const FormDetailsPassenger = ({ user, handlePurchase }) => {
           <option value="RC">CE</option>
         </select>
         {formik.touched.documentType && formik.errors.documentType && (
-          <div>{formik.errors.documentType}</div>
+          <div className="error-message">{formik.errors.documentType}</div>
         )}
 
         <input
@@ -96,7 +92,7 @@ export const FormDetailsPassenger = ({ user, handlePurchase }) => {
           {...formik.getFieldProps("documentId")}
         />
         {formik.touched.documentId && formik.errors.documentId && (
-          <div>{formik.errors.documentId}</div>
+          <div className="error-message">{formik.errors.documentId}</div>
         )}
 
         <span>e-mail</span>
@@ -107,7 +103,7 @@ export const FormDetailsPassenger = ({ user, handlePurchase }) => {
           {...formik.getFieldProps("email")}
         />
         {formik.touched.email && formik.errors.email && (
-          <div>{formik.errors.email}</div>
+          <div className="error-message">{formik.errors.email}</div>
         )}
 
         <span>Teléfono móvil</span>
@@ -118,7 +114,7 @@ export const FormDetailsPassenger = ({ user, handlePurchase }) => {
           {...formik.getFieldProps("phone")}
         />
         {formik.touched.phone && formik.errors.phone && (
-          <div>{formik.errors.phone}</div>
+          <div className="error-message">{formik.errors.phone}</div>
         )}
 
         <span>Dirección</span>
@@ -129,7 +125,7 @@ export const FormDetailsPassenger = ({ user, handlePurchase }) => {
           {...formik.getFieldProps("address")}
         />
         {formik.touched.address && formik.errors.address && (
-          <div>{formik.errors.address}</div>
+          <div className="error-message">{formik.errors.address}</div>
         )}
 
         <span>Método de pago</span>
@@ -144,7 +140,7 @@ export const FormDetailsPassenger = ({ user, handlePurchase }) => {
           <option value="efectivo">Efectivo</option>
         </select>
         {formik.touched.paymentMethod && formik.errors.paymentMethod && (
-          <div>{formik.errors.paymentMethod}</div>
+          <div className="error-message">{formik.errors.paymentMethod}</div>
         )}
 
         <button type="submit" disabled={formik.isSubmitting}>

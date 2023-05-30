@@ -92,4 +92,7 @@ export const CityItem = styled.li`
 export const Error = styled.div`
   color: red;
     font-size: 1.3rem;
+    @media screen and (max-width: 375px) {
+      font-size: 1rem;
+    }
 `;

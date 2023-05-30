@@ -88,6 +88,8 @@ const ModalPassenger = ({
   totalPassengers,
   setTotalPricePassengers,
 }) => {
+
+const ModalPassenger = ({ passengers, setPassengers }) => {
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedPassengers, setSelectedPassengers] = useState({
     adults: 0,
@@ -107,6 +109,7 @@ const ModalPassenger = ({
       [type]: prevPassengers[type] + 1,
     }));
     setTotalPassengers((prevTotal) => prevTotal + 1);
+    console.log(passengers);
   };
 
   //'decreasePassengerCount': Esta función se encarga de disminuir la cantidad de pasajeros de un tipo específico (adultos, niños o bebés). Recibe como parámetro el tipo de pasajero y verifica si la cantidad actual es mayor a 0 antes de disminuirlo utilizando 'setAdults', 'setChildren' o 'setBabies'.
@@ -154,9 +157,9 @@ const ModalPassenger = ({
     <>
       <Container>
         <Button onClick={toggleModal}>Pasajeros</Button>
-
+  
         <div>{totalPassengers} pasajeros</div>
-
+              
         {modalOpen && (
           <Modal>
             <ModalContent>
@@ -169,6 +172,7 @@ const ModalPassenger = ({
                     -
                   </PassengerButton>
                   <span>{selectedPassengers.adults}</span>
+                  <span>{passengers.adults}</span>
                   <PassengerButton
                     onClick={() => increasePassengerCount("adults")}
                   >
@@ -186,6 +190,7 @@ const ModalPassenger = ({
                     -
                   </PassengerButton>
                   <span>{selectedPassengers.children}</span>
+                  <span>{passengers.children}</span>
                   <PassengerButton
                     onClick={() => increasePassengerCount("children")}
                   >
@@ -203,6 +208,7 @@ const ModalPassenger = ({
                     -
                   </PassengerButton>
                   <span>{selectedPassengers.babies}</span>
+                  <span>{passengers.babies}</span>
                   <PassengerButton
                     onClick={() => increasePassengerCount("babies")}
                   >

@@ -53,16 +53,16 @@ export const StyledDateArrival = styled.div`
   @media (max-width: 375px) {
     h2 {
       position: relative;
-      top: 378px;
+      top: 645px;
     }
 
     h4 {
       position: relative;
-      top: 378px;
+      top: 645px;
     }
     p {
       position: relative;
-      top: 378px;
+      top: 645px;
     }
   }
 `;
@@ -85,7 +85,7 @@ export const StyledContainerArrival = styled.div`
     top: 357px;
   }
   @media (max-width: 375px) {
-    top: 390px;
+    top: 647px;
   }
 `;
 

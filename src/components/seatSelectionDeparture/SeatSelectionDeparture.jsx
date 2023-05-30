@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { compras } from "../../services/asientos";
+
 import {
   Aisle,
   // Button,
@@ -41,6 +42,7 @@ const SeatSelectionDeparture = () => {
     navigate("/");
     window.location.reload();
   };
+
   const [selectedSeat, setSelectedSeat] = useState([]);
 
   console.log(compras);

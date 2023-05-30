@@ -1,11 +1,11 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const StyleForm = styled.div`
-   display: grid;
-   grid-template-columns: repeat(2, 1fr);
-   grid-column-gap: 20px;
-   grid-row-gap: 1em;
-`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 1em;
+`;
 
 export const Container = styled.div`
   border: 1px solid;
@@ -24,45 +24,51 @@ export const Container = styled.div`
     color: var(--Gray);
     font-size: 1.3rem;
   }
- 
-`
+  @media screen and (max-width: 375px) {
+    p {
+      color: var(--Gray);
+      font-size: 0.5rem;
+      margin-bottom: 14px;
+    }
+  }
+`;
 export const ContainerTwo = styled.div`
   border: 2px solid;
   border-color: var(--Gray);
   border-radius: 5px;
   padding: 0;
-  span{
+  span {
     bottom: 20px;
-  margin-left: 40px;
-}
-  p{
-    font-size: 1.3rem;    
-  color: #000;
-  margin-left: 40px;
+    margin-left: 40px;
   }
- 
-`
+  p {
+    font-size: 1.3rem;
+    color: #000;
+    margin-left: 40px;
+  }
+`;
 export const StyledContainer = styled.div`
-/* position: relative;
+  /* position: relative;
 top: 10px; */
-`
+`;
 
 export const StyleButton = styled.button`
-width: 100%;
-padding: 10px 20px;
-background: var(--purple);
-border: none;
-cursor: pointer;
-border-radius: 50px;
-color: var(--White);
-margin: 10px 0 0 0;
-font-size: 1.4rem;
-line-height: 1rem;
-vertical-align: text-top;  
-img{
-    vertical-align: middle; 
+  width: 100%;
+  padding: 10px 20px;
+  background: var(--purple);
+  border: none;
+  cursor: pointer;
+  border-radius: 50px;
+  color: var(--White);
+  margin: 10px 0 0 0;
+  font-size: 1.4rem;
+  line-height: 1rem;
+  vertical-align: text-top;
+  img {
+    vertical-align: middle;
     width: 38px;
     height: 38px;
     object-fit: cover;
-}
-`
+  }
+  
+`;

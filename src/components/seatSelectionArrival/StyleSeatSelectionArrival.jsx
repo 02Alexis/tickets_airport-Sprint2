@@ -5,6 +5,7 @@ export const SeatSelectArrival = styled.div`
   justify-content: space-between;
   width: 400px;
   margin-bottom: 7px;
+  
 `;
 
 export const ReferentSeatArrival = styled.div`
@@ -12,6 +13,8 @@ export const ReferentSeatArrival = styled.div`
   justify-content: space-between;
   width: 400px;
   margin-bottom: 7px;
+
+ 
 `;
 
 export const SubtittleArrival = styled.div`

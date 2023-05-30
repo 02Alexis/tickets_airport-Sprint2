@@ -9,53 +9,31 @@ export const Contenedor = styled.div`
     font-size: 1.2rem;
     margin-bottom: 10px;
   }
-  @media (max-width: 1200px) {
-    position: relative;
-    top: -1171px;
-    left: -1px;
-    width: 29%;
-  }
+ 
 
-  @media (max-width: 828px) {
+  @media (max-width: 900px) {
     position: relative;
-    top: -1246px;
+    top: -1234px;
     left: -1px;
     width: 44%;
   }
-
-
- @media (max-width: 758px) {
-    position: relative;
-    top: -1364px;
-    left: -1px;
-    width: 100%;
-  }
-@media (max-width: 659px) {
-  
-    position: relative;
-    top: -3139px;
-    left: -1px;
-    width: 100%;
-  }
-
-
-  @media (max-width: 500px) {
+  @media (max-width: 522px){
     display: flex;
     flex-direction: column;
     width: 100%;
+    top: -3122px;
   }
 
   @media (max-width: 375px) {
     display: flex;
     flex-direction: column;
     width: 100%;
-    top: -3176px;
+    top: -3196px;
 
 
     h3{
       font-size: 0.8rem;
     }
-    
   }
 
   opacity: 0; /* Establecer la opacidad inicial en 0 */
@@ -84,12 +62,17 @@ export const StyleContainer = styled.div`
     color: var(--Gray);
     margin: 10px;
   }
+  /* @media (max-width: 900px) {
+    padding: 0px;
+  }
+
+
   @media (max-width: 375px) {
     padding: 1px;
   }
   @media (max-width: 659px) {
     padding: 1px;
-  }
+  } */
 `;
 
 export const Styletext = styled.div`

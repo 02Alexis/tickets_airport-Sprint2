@@ -36,6 +36,12 @@ export const ReferenSeat = styled.div`
   justify-content: space-between;
   width: 400px;
   margin-bottom: 7px;
+  
+  /* @media (max-width: 375px){
+    display: flex;
+    flex-direction: row;
+    
+  } */
 `;
 
 export const Subtittle = styled.div`
