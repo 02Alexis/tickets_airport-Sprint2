@@ -5,7 +5,7 @@ import Down from '../../img/line.png'
 import { searchParamsContext } from "../../Routes/AppRouter";
 
 
-const ReservationFligth = ({departureTime1, arrivalTime1, departureTime2, arrivalTime2, selectedPrice1, selectedPrice2, totalPrice, totalPricePassengers}) => {
+const ReservationFligth = ({departureTime1, handleButtonNavigateSelection, arrivalTime1, departureTime2, arrivalTime2, selectedPrice1, selectedPrice2, totalPrice, totalPricePassengers}) => {
 
   const {
     filters,
@@ -78,7 +78,10 @@ const ReservationFligth = ({departureTime1, arrivalTime1, departureTime2, arriva
         </ColumnCost>
       </ContainerCost>
      </StyleContainerCost>
+     <button onClick={() => handleButtonNavigateSelection()}> Seleccionar asientos </button>
     </ContenedorCost>
+   
+
    </>
   );
 };
