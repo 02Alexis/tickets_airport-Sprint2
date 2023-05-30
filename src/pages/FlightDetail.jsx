@@ -158,6 +158,7 @@ const FlightDetail = () => {
                   handleArrivalClick={handleArrivalClick}
                 />
                 <ReservationFligth
+                handleButtonNavigateSelection={handleButtonNavigateSelection}
                   departureTime1={departureTime1}
                   arrivalTime1={arrivalTime1}
                   departureTime2={departureTime2}

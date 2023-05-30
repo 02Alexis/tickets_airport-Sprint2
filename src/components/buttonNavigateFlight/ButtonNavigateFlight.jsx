@@ -5,7 +5,7 @@ import styled from "styled-components";
 // Estilos para el botón
 //'Button': Define el estilo del botón. Utiliza 'display' para mostrar u ocultar el botón según el valor de la propiedad 'show'.
 const Button = styled.button`
-  /* display: ${({ show }) => (show ? "block" : "none")}; */
+
   border-radius: 50px;
   border: 1px solid #9e1071;
   background-color: var(--purple);
@@ -20,7 +20,7 @@ const Button = styled.button`
   position: absolute;
   top: 95%;
   right: 6%;
-    cursor: pointer;
+  cursor: pointer;
 
   &:hover {
     background-color: var(--White);

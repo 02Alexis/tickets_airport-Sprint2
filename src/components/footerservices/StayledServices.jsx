@@ -27,6 +27,6 @@ export const StyledServices = styled.div`
     position: relative;
     flex-wrap: wrap;
     justify-content: center;
-    width: 200%;
+    width: 175%;
   }
 `;
