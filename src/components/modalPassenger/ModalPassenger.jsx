@@ -38,7 +38,7 @@ const ModalContent = styled.div`
   background-color: white;
   width: 300px;
   padding: 20px;
-  border-radius: 4px 4px 18px 18px;
+  border-radius: 24px;
 `;
 
 const PassengerContainer = styled.div`
@@ -72,11 +72,18 @@ const PassengerButton = styled.button`
 
 const ModalButton = styled.button`
   margin-top: 10px;
+  background-color:  #9e1071;
+  padding: 8px;
+  border-radius: 10px;
+  color: white;
 `;
 
 const Error = styled.div`
   color: red;
   font-size: 1.3rem;
+  @media screen and (max-width: 375px) {
+    font-size: 1rem;
+  }
 `;
 
 const adultPrice = 18.0;

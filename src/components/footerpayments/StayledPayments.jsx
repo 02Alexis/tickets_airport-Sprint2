@@ -31,12 +31,21 @@ export const StayledArticle = styled.article`
     display: flex;
     gap: 2rem;
     cursor: pointer;
+
+
+    @media (max-width: 375px) {
+      
+    display: flex;
+    gap: 1rem;
+    cursor: pointer; 
+    }
+
   }
   @media (max-width: 375px) {
     flex-direction: column;
     display: flex;
     justify-content: space-between;
-    width: 163%;
+    width: 155%;
     gap: 35px;
     top: 35px;
     position: relative;
