@@ -28,7 +28,7 @@ export const Contenedor = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
-    top: -3196px;
+    top: -3173px;
 
 
     h3{
@@ -62,18 +62,7 @@ export const StyleContainer = styled.div`
     color: var(--Gray);
     margin: 10px;
   }
-  /* @media (max-width: 900px) {
-    padding: 0px;
-  }
-
-
-  @media (max-width: 375px) {
-    padding: 1px;
-  }
-  @media (max-width: 659px) {
-    padding: 1px;
-  } */
-`;
+ `;
 
 export const Styletext = styled.div`
   position: relative;
