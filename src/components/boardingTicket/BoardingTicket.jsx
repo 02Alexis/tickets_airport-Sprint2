@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import styled from "styled-components";
 import axios from "axios";
+import { searchParamsContext } from "../../Routes/AppRouter";
 
 // Componente de estilo para el pase de abordar
 const BoardingPass = styled.div`
@@ -74,6 +75,9 @@ const ReservationCodeTitle = styled.h3`
 
 const BoardingTicket = () => {
     const [userData, setUserData] = useState(null);
+    const {
+      filters,
+    } = useContext(searchParamsContext);
   
     useEffect(() => {
         const fetchLastUserFromAPI = async () => {
@@ -110,30 +114,30 @@ const BoardingTicket = () => {
           </ReservationCodeTitle>
           <BoardingPassItem>
             <strong>
-              Ciudad de Origen: <span>MED</span>
+              Ciudad de Origen: <span>{filters.selectedCity.slice(-3)}</span>
             </strong>
           </BoardingPassItem>
           <BoardingPassItem>
             <strong>
-              Fecha de vuelo salida: <span>Jul. 25 2023</span>
+              Fecha de vuelo salida: <span>{filters.dateDre}</span>
             </strong>
           </BoardingPassItem>
           <BoardingPassItem>
             <strong>
-              Hora: <span>6:50 PM</span>
+              Hora de Salida: <span>{filters.departureTime1}</span>
             </strong>
           </BoardingPassItem>
           <BoardingPassItem>
-            <strong>Ciudad de Destino:</strong>
+            <strong>Ciudad de Destino: {filters.selectedCityDon.slice(-3)}</strong>
           </BoardingPassItem>
           <BoardingPassItem>
             <strong>
-              Fecha de vuelo llegada:<span>Jul. 25 2023</span>
+              Fecha de vuelo llegada:<span> {filters.date}</span>
             </strong>
           </BoardingPassItem>
           <BoardingPassItem>
             <strong>
-              Hora:<span>7:50 PM</span>
+              Hora de Llegada:<span> {filters.arrivalTime1}</span>
             </strong>
           </BoardingPassItem>
           <BoardingPassItem>
