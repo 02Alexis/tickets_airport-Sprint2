@@ -37,9 +37,9 @@ const ReservationFligth = ({departureTime1, arrivalTime1, departureTime2, arriva
       <h1>{filters.selectedCityDon.slice(-3)}</h1>
     </StyleExit>
     <StyleExit2>
-      <p>{filters.departureTime1}</p>
+      <p>{departureTime1}</p>
       <p></p>
-      <p>{filters.arrivalTime1}</p>
+      <p>{arrivalTime1}</p>
     </StyleExit2>
     <Styletext>{filters.dateDre}</Styletext>
     
@@ -50,9 +50,9 @@ const ReservationFligth = ({departureTime1, arrivalTime1, departureTime2, arriva
       <h1>{filters.selectedCity.slice(-3)}</h1>
     </StyleExit>
     <StyleExit2>
-      <p>{filters.departureTime2}</p>
+      <p>{departureTime2}</p>
       <p></p>
-      <p>{filters.arrivalTime2}</p>
+      <p>{arrivalTime2}</p>
     </StyleExit2>
     <Styletext>{filters.date}</Styletext>
     </StyleContainer>
@@ -70,11 +70,11 @@ const ReservationFligth = ({departureTime1, arrivalTime1, departureTime2, arriva
           <h3>Total</h3>
         </div>
         <ColumnCost>
-          <p>${filters.selectedPrice1}</p>
-          <p>${filters.selectedPrice2}</p>
+          <p>${selectedPrice1}</p>
+          <p>${selectedPrice2}</p>
           <p>{filters.totalPricePassengers.toFixed(3)}</p>
           <ContainerCostIva>$75 MXN</ContainerCostIva>
-          <h3>${filters.totalPrice}</h3>
+          <h3>${totalPrice}</h3>
         </ColumnCost>
       </ContainerCost>
      </StyleContainerCost>

@@ -59,11 +59,7 @@ const Button = styled.button`
 const ButtonNavigateFlight = ({ show, handleButtonNavigateSelection }) => {
   // const navigate = useNavigate();
 
-  // const handleButton = () => {
-  //   console.log("entre");
-  //   navigate("/flightDetail/seatSelection");
-  //   showSeatSelection(true);
-  // };
+
 
   return (
     <>
