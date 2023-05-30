@@ -15,7 +15,7 @@ const FlightDetail = () => {
 
   const [selectedButton1, setSelectedButton1] = useState(null);
   const [selectedButton2, setSelectedButton2] = useState(null);
-  const [iva, setIva] = useState(16);
+
 
   const navigate = useNavigate();
   const {
@@ -23,7 +23,8 @@ const FlightDetail = () => {
     selectedCityDon,
     dateDre,
     date,
-    passengers,
+    totalPassengers,
+    totalPricePassengers,
 
     departureTime1,
     setDepartureTime1,
@@ -50,7 +51,9 @@ const FlightDetail = () => {
       !selectedCityDon ||
       !dateDre ||
       !date ||
-      !passengers ||
+      !totalPassengers ||
+      !totalPricePassengers ||
+      
       !departureTime1 ||
       !arrivalTime1 ||
       !selectedPrice1 ||
@@ -70,7 +73,8 @@ const FlightDetail = () => {
         selectedCityDon,
         dateDre,
         date,
-        passengers,
+        totalPassengers,
+        totalPricePassengers,
 
         departureTime1,
         arrivalTime1,
@@ -144,7 +148,6 @@ const FlightDetail = () => {
                 <CustomPageStyles />
                 <ButtonNavigateFlight
                   handleButtonNavigateSelection={handleButtonNavigateSelection}
-                  showSeatSelection={setShowFlightDetail}
                 />
                 <DepartureFlight
                   selectedButton1={selectedButton1}

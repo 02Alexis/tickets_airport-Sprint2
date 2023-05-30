@@ -5,7 +5,7 @@ import Down from '../../img/line.png'
 import { searchParamsContext } from "../../Routes/AppRouter";
 
 
-const ReservationFligth = ({departureTime1, arrivalTime1, departureTime2, arrivalTime2, selectedPrice1, selectedPrice2, totalPrice}) => {
+const ReservationFligth = ({departureTime1, arrivalTime1, departureTime2, arrivalTime2, selectedPrice1, selectedPrice2, totalPrice, totalPricePassengers}) => {
 
   const {
     filters,
@@ -28,7 +28,7 @@ const ReservationFligth = ({departureTime1, arrivalTime1, departureTime2, arriva
     <StyleContainer>
       <StyleFlex>
         <p>Pasajeros</p>
-            <h3>1 Pasajero</h3>
+            <h3>{filters.totalPassengers} Pasajero</h3>
       </StyleFlex>    
     <p>Vuelo de salida</p>
     <StyleExit>
@@ -42,7 +42,7 @@ const ReservationFligth = ({departureTime1, arrivalTime1, departureTime2, arriva
       <p>{filters.arrivalTime1}</p>
     </StyleExit2>
     <Styletext>{filters.dateDre}</Styletext>
-{/* {filters.passengers} */}
+    
     <p>Vuelo de regreso</p>
     <StyleExit>
       <h1>{filters.selectedCityDon.slice(-3)}</h1>
@@ -72,7 +72,7 @@ const ReservationFligth = ({departureTime1, arrivalTime1, departureTime2, arriva
         <ColumnCost>
           <p>${filters.selectedPrice1}</p>
           <p>${filters.selectedPrice2}</p>
-          <p>$471 MXN</p>
+          <p>{filters.totalPricePassengers.toFixed(3)}</p>
           <ContainerCostIva>$75 MXN</ContainerCostIva>
           <h3>${filters.totalPrice}</h3>
         </ColumnCost>

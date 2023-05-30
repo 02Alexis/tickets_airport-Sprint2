@@ -50,8 +50,10 @@ const FormFligth = ({ viaje }) => {
     setDateDre,
     date,
     setDate,
-    passengers,
-    setPassengers,
+    totalPassengers,
+    setTotalPassengers,
+    totalPricePassengers,
+    setTotalPricePassengers,
     setFilters,
   } = useContext(searchParamsContext);
 
@@ -60,21 +62,27 @@ const FormFligth = ({ viaje }) => {
     console.log(selectedCityDon);
     console.log(dateDre);
     console.log(date);
-    console.log(passengers);
-  if (!selectedCity || !selectedCityDon || !dateDre || !date || !passengers) {
-    Swal.fire("Oopss!", "No has completado todos los datos", "error");      
-  } else {
-    const params = {
-      selectedCity, selectedCityDon, dateDre, date, passengers
+    if (!selectedCity || !selectedCityDon || !dateDre || !date || !totalPassengers || !totalPricePassengers ) {
+      Swal.fire("Oopss!", "No has completado todos los datos", "error");
+    } else {
+      const params = {
+        selectedCity,
+        selectedCityDon,
+        dateDre,
+        date,
+        totalPassengers,
+        totalPricePassengers,
+      };
+      setFilters(params);
+      console.log(params);
+      Swal.fire("Good job!", "Genial, datos Confirmados", "success").then(
+        () => {
+          sessionStorage.setItem("searchParams", JSON.stringify(params));
+          navigate("/flightDetail");
+        }
+      );
     }
-    setFilters(params);
-    console.log(params);
-    Swal.fire("Good job!", "Genial, datos Confirmados", "success").then(() => {
-      sessionStorage.setItem("searchParams", JSON.stringify(params));
-      navigate("/flightDetail");
-    })
-  }
-};
+  };
 
   useEffect(() => {
     // console.log(cities);
@@ -86,13 +94,13 @@ const FormFligth = ({ viaje }) => {
       })
       .catch((error) => console.log(error));
 
-      GetFlights()
-        .then((response) => {
-          if (!vuelos.length) {
-            setVuelos(response);
-          }
-        })
-        .catch((error) => console.log(error));
+    GetFlights()
+      .then((response) => {
+        if (!vuelos.length) {
+          setVuelos(response);
+        }
+      })
+      .catch((error) => console.log(error));
 
     GetFlights()
       .then((response) => {
@@ -118,8 +126,7 @@ const FormFligth = ({ viaje }) => {
       })
       .catch((error) => console.log(error));
   }, [vuelos, cities, citiesDon, hours, hoursDre]);
-  
-  
+
   return (
     <>
       {/* Campo Ciudad Origen */}
@@ -160,13 +167,15 @@ const FormFligth = ({ viaje }) => {
 
         {/* Campo Cantidad de Pasajeros */}
         <StyledContainer>
-          <ModalPassenger
-            passengers={passengers}
-            setPassengers={setPassengers}
-          />
+          <ModalPassenger totalPricePassengers={totalPricePassengers} setTotalPricePassengers={setTotalPricePassengers} totalPassengers={totalPassengers} setTotalPassengers={setTotalPassengers} />
         </StyledContainer>
       </StyleForm>
-      <StyleButton type="button" onClick={() => {handleButton(vuelos.id)}}>
+      <StyleButton
+        type="button"
+        onClick={() => {
+          handleButton(vuelos.id);
+        }}
+      >
         <img src={Plane} alt="Avion" /> Buscar vuelos
       </StyleButton>
     </>
