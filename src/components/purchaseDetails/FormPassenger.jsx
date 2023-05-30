@@ -4,6 +4,7 @@ import * as Yup from "yup";
 import { StyleForm } from "./StyleFormPassenger";
 import Person from "../../assets/used.svg";
 
+
 const validationSchema = Yup.object().shape({
   username: Yup.string()
     .min(3, "El nombre de usuario debe tener al menos 3 caracteres")
@@ -25,7 +26,7 @@ const validationSchema = Yup.object().shape({
     .min(10, "El teléfono debe tener al menos 10 caracteres")
     .max(10, "El teléfono no debe tener más de 10 caracteres")
     .required("El teléfono es obligatorio"),
-  address: Yup.string(),
+  address: Yup.string().required("La dirección es obligatoria"),
   paymentMethod: Yup.string().required("Seleccione el medio de pago"),
 });
 
@@ -53,7 +54,6 @@ export const FormDetailsPassenger = ({ user, handlePurchase }) => {
       <StyleForm onSubmit={formik.handleSubmit}>
         <div>
           <h2>
-            {" "}
             <img src={Person} alt="person" /> Datos Personales
           </h2>
         </div>
@@ -64,8 +64,8 @@ export const FormDetailsPassenger = ({ user, handlePurchase }) => {
           placeholder="Nombre de usuario"
           {...formik.getFieldProps("username")}
         />
-          {formik.touched.username && formik.errors.username && (
-          <div className="error-message">{formik.errors.username}</div>
+        {formik.touched.username && formik.errors.username && (
+            <div>{formik.errors.username}</div>
         )}
 
         <span>Documento de identidad</span>
@@ -82,7 +82,7 @@ export const FormDetailsPassenger = ({ user, handlePurchase }) => {
           <option value="RC">CE</option>
         </select>
         {formik.touched.documentType && formik.errors.documentType && (
-          <div className="error-message">{formik.errors.documentType}</div>
+            <div>{formik.errors.documentType}</div>
         )}
 
         <input
@@ -91,8 +91,8 @@ export const FormDetailsPassenger = ({ user, handlePurchase }) => {
           placeholder="Número de documento"
           {...formik.getFieldProps("documentId")}
         />
-        {formik.touched.documentId && formik.errors.documentId && (
-          <div className="error-message">{formik.errors.documentId}</div>
+           {formik.touched.documentId && formik.errors.documentId && (
+            <div>{formik.errors.documentId}</div>
         )}
 
         <span>e-mail</span>
@@ -102,8 +102,8 @@ export const FormDetailsPassenger = ({ user, handlePurchase }) => {
           placeholder="Correo electrónico"
           {...formik.getFieldProps("email")}
         />
-        {formik.touched.email && formik.errors.email && (
-          <div className="error-message">{formik.errors.email}</div>
+         {formik.touched.email && formik.errors.email && (
+            <div>{formik.errors.email}</div>
         )}
 
         <span>Teléfono móvil</span>
@@ -114,7 +114,7 @@ export const FormDetailsPassenger = ({ user, handlePurchase }) => {
           {...formik.getFieldProps("phone")}
         />
         {formik.touched.phone && formik.errors.phone && (
-          <div className="error-message">{formik.errors.phone}</div>
+            <div>{formik.errors.phone}</div>
         )}
 
         <span>Dirección</span>
@@ -124,8 +124,8 @@ export const FormDetailsPassenger = ({ user, handlePurchase }) => {
           placeholder="Dirección"
           {...formik.getFieldProps("address")}
         />
-        {formik.touched.address && formik.errors.address && (
-          <div className="error-message">{formik.errors.address}</div>
+       {formik.touched.address && formik.errors.address && (
+            <div>{formik.errors.address}</div>
         )}
 
         <span>Método de pago</span>
@@ -140,7 +140,7 @@ export const FormDetailsPassenger = ({ user, handlePurchase }) => {
           <option value="efectivo">Efectivo</option>
         </select>
         {formik.touched.paymentMethod && formik.errors.paymentMethod && (
-          <div className="error-message">{formik.errors.paymentMethod}</div>
+            <div>{formik.errors.paymentMethod}</div>
         )}
 
         <button type="submit" disabled={formik.isSubmitting}>

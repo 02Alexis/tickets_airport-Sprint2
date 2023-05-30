@@ -1,11 +1,14 @@
 import React from 'react';
+import GlobalStyled from '../components/app/StyledApp';
+import BoardingTicket from '../components/boardingTicket/BoardingTicket';
+
 
 const TicketPurchase = () => {
   return (
-    <div>
-      <h1>Ticket</h1>
-      {/* Contenido de la nueva página */}
-    </div>
+    <>
+    <GlobalStyled />
+    <BoardingTicket />
+        </>
   );
 };
 
