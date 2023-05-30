@@ -6,7 +6,7 @@ import BoardingTicket from '../components/boardingTicket/BoardingTicket';
 const TicketPurchase = () => {
   return (
     <>
-    <GlobalStyled />
+    <GlobalStyled />        
     <BoardingTicket />
         </>
   );

@@ -8,7 +8,7 @@ import Person from "../../assets/used.svg";
 const validationSchema = Yup.object().shape({
   username: Yup.string()
     .min(3, "El nombre de usuario debe tener al menos 3 caracteres")
-    .max(15, "El nombre de usuario no debe tener más de 15 caracteres")
+    .max(30, "El nombre de usuario no debe tener más de 30 caracteres")
     .required("El nombre de usuario es obligatorio"),
   documentType: Yup.string()
     .oneOf(["CC", "TI"], "Seleccione un tipo de documento válido")
