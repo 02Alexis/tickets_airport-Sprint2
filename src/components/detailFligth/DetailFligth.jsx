@@ -15,6 +15,7 @@ import {
   ContainerCost,
   ContainerCostIva,
   ColumnCost,
+  StyleButtonNavigate
 } from "../reservationFligth/StyleFlightCost";
 import { useNavigate } from "react-router";
 
@@ -85,28 +86,29 @@ const DetailFligth = ({
       <ContenedorCost>
         <h1>Costos de vuelo</h1>
         <StyleContainerCost>
-          <ContainerCost>
-            <div>
-              <p>Tarida base</p>
-              <p>Tarifa base equipaje 2</p>
-              <p>Descuento Promocional</p>
-              <ContainerCostIva>IVA Tarifa</ContainerCostIva>
-              <h3>Total</h3>
-            </div>
-            <ColumnCost>
-              <p>${filters.selectedPrice1}</p>
-              <p>${filters.selectedPrice2}</p>
-              <p>{filters.totalPricePassengers.toFixed(3)}</p>
-              <ContainerCostIva>$75 MXN</ContainerCostIva>
-              <h3>${filters.totalPrice}</h3>
-            </ColumnCost>
+        <ContainerCost>
+        <div>
+          <p>Tarida base</p>
+          <p>Tarifa base equipaje</p>
+          <p>Tarifa base equipaje 2</p>
+          <ContainerCostIva>IVA Tarifa</ContainerCostIva>
+          <h3>Total</h3>
+        </div>
+        <ColumnCost>
+        <p>${filters.totalPricePassengers.toFixed(3)}</p>
+          {/* <p>${selectedPrice1}</p> */}
+          <p>${filters.selectedPrice2}</p>
+          <p>${filters.selectedPrice1}</p>
+          <ContainerCostIva>$75 MXN</ContainerCostIva>
+          <h3>${filters.totalPrice}</h3>
+        </ColumnCost>
           </ContainerCost>
         </StyleContainerCost>
       </ContenedorCost>
 
-      <ContenedorCost>
+      <StyleButtonNavigate>
         <button onClick={() => handleButton()}>pagar</button>
-      </ContenedorCost>
+      </StyleButtonNavigate>
     </>
   );
 };

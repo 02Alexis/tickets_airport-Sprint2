@@ -5,7 +5,6 @@ import GlobalStyled, { CustomPageStyles } from "../components/app/StyledApp";
 import ReservationFligth from "../components/reservationFligth/ReservationFligth";
 import LoadingComponent from "../components/loading/LoadingComponent"; // importamos el componente
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
-import ButtonNavigateFlight from "../components/buttonNavigateFlight/ButtonNavigateFlight";
 import { searchParamsContext } from "../Routes/AppRouter";
 import Swal from "sweetalert2";
 
@@ -146,9 +145,6 @@ const FlightDetail = () => {
               <>
                 <GlobalStyled />
                 <CustomPageStyles />
-                <ButtonNavigateFlight
-                  handleButtonNavigateSelection={handleButtonNavigateSelection}
-                />
                 <DepartureFlight
                   selectedButton1={selectedButton1}
                   handleDepartureClick={handleDepartureClick}
