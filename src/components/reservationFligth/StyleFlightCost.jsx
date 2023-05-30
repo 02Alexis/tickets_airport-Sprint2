@@ -132,3 +132,98 @@ export const Column = styled.div`
   grid-row-gap: 1em;
 `;
 
+export const StyleButton = styled.div`
+  button{
+    border-radius: 50px;
+  border: 1px solid #9e1071;
+  background-color: var(--purple);
+  padding: 15px 16px;
+  font-size: 16px;
+  font-weight: bold;
+  width: 350px;
+  color: var(--White);
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  top: 95%;
+  right: 6%;
+  cursor: pointer;
+    &:hover {
+    background-color: var(--White);
+    color: var(--purple);
+  }
+    /* Estilos para pantallas con un ancho máximo de 375px */
+
+  @media (max-width: 1200px) {
+    position: relative;
+    top: 278px;
+    width: 321px;
+    left: -11px;
+    z-index: 2;
+  }
+  @media (max-width: 659px) {
+    left: -4px;
+    position: relative;
+    top: 393px;
+    width: 332px;
+    z-index: 2;
+  }
+
+  @media (max-width: 375px) {
+    position: relative;
+    top: 598px;
+    width: 100%;
+    z-index: 2;
+    left: -2px;
+}
+  }
+`;
+
+export const StyleButtonNavigate = styled.div`
+  button{
+    border-radius: 50px;
+  border: 1px solid #9e1071;
+  background-color: var(--purple);
+  padding: 15px 16px;
+  font-size: 16px;
+  font-weight: bold;
+  width: 350px;
+  color: var(--White);
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  top: 95%;
+  right: 6%;
+  cursor: pointer;
+    &:hover {
+    background-color: var(--White);
+    color: var(--purple);
+  }
+    /* Estilos para pantallas con un ancho máximo de 375px */
+
+  @media (max-width: 1200px) {
+    position: relative;
+    top: 278px;
+    width: 321px;
+    left: -11px;
+    z-index: 2;
+  }
+  @media (max-width: 659px) {
+    left: -4px;
+    position: relative;
+    top: 393px;
+    width: 332px;
+    z-index: 2;
+  }
+
+  @media (max-width: 375px) {
+    position: relative;
+    top: 598px;
+    width: 100%;
+    z-index: 2;
+    left: -2px;
+}
+  }
+`;

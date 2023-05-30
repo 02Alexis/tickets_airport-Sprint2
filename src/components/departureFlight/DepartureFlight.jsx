@@ -37,13 +37,13 @@ const DepartureFlight = ({ handleDepartureClick, selectedButton1 }) => {
               <StyledTd><span>2 h 30 min</span> <img src={ Scala }  alt="Escala" /> <span>sin escalas</span> </StyledTd>
               <StyledTd><h2>6:47 PM</h2></StyledTd>
               <hr />
-              <StyledTdLast isSelected={selectedButton1 === '60.00'} onClick={() => handleDepartureClick("05:50", "06:47", "60.00")}>
+              <StyledTdLast isSelected={selectedButton1 === '60.00'} onClick={() => handleDepartureClick("05:50 PM", "06:47 PM", "60.00")}>
                 <img src={ Briefcase }  alt="Briefcase" /> <span>1 objeto personal</span><h4>$ 60.000 COP</h4>
               </StyledTdLast>
-              <StyledTdLast  isSelected={selectedButton1 === '90.00'} onClick={() => handleDepartureClick("05:50", "06:47", "90.00")}>
+              <StyledTdLast  isSelected={selectedButton1 === '90.00'} onClick={() => handleDepartureClick("05:50 PM", "06:47 PM", "90.00")}>
                 <img src={ Briefcase }  alt="Briefcase" /> <span>Equipaje de mano</span><h4>$ 90.000 COP</h4>
               </StyledTdLast>
-              <StyledTdLast  isSelected={selectedButton1 === '120.00'} onClick={() => handleDepartureClick("05:50", "06:47", "120.00")}>
+              <StyledTdLast  isSelected={selectedButton1 === '120.00'} onClick={() => handleDepartureClick("05:50 PM", "06:47 PM", "120.00")}>
                 <img src={ Briefcase }  alt="Briefcase" /> <span> Equiaje 25kg</span><h4>$ 120.000 COP</h4>
               </StyledTdLast>
             </tr>
@@ -55,15 +55,15 @@ const DepartureFlight = ({ handleDepartureClick, selectedButton1 }) => {
             <tr>
               <StyledTd><h2>8:50 AM</h2></StyledTd>
               <StyledTd><span>1 h 57 min</span> <img src={ Scala }  alt="Escala" /> <span>sin escalas</span> </StyledTd>
-              <StyledTd><h2>9:47 PM</h2></StyledTd>
+              <StyledTd><h2>9:47 AM</h2></StyledTd>
               <hr />
-              <StyledTdLast isSelected={selectedButton1 === '60.000'} onClick={() => handleDepartureClick("08:50", "09:47", "60.000")}>
+              <StyledTdLast isSelected={selectedButton1 === '60.000'} onClick={() => handleDepartureClick("08:50 AM", "09:47 AM", "60.000")}>
                 <img src={ Briefcase }  alt="Briefcase" /> <span>1 objeto personal</span><h4>$ 60.000 COP</h4>
               </StyledTdLast>
-              <StyledTdLast isSelected={selectedButton1 === '90.000'} onClick={() => handleDepartureClick("08:50", "09:47", "90.000")}>
+              <StyledTdLast isSelected={selectedButton1 === '90.000'} onClick={() => handleDepartureClick("08:50 AM", "09:47 AM", "90.000")}>
                 <img src={ Briefcase }  alt="Briefcase" /> <span>Equipaje de mano</span><h4>$ 90.000 COP</h4>
               </StyledTdLast>
-              <StyledTdLast isSelected={selectedButton1 === '120.000'} onClick={() => handleDepartureClick("08:50", "09:47", "120.000")}>
+              <StyledTdLast isSelected={selectedButton1 === '120.000'} onClick={() => handleDepartureClick("08:50 AM", "09:47 AM", "120.000")}>
                 <img src={ Briefcase }  alt="Briefcase" /> <span> Equiaje 25kg</span><h4>$ 120.000 COP</h4>
               </StyledTdLast>
             </tr>

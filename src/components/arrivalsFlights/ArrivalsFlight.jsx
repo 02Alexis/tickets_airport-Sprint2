@@ -20,7 +20,7 @@ const ArrivalsFlight = ({ selectedButton2, handleArrivalClick }) => {
         <h1>Vuelo de Regreso</h1>
         <StyleBottonArrivals  onClick={() => navigate(-1)}>Cambiar vuelo</StyleBottonArrivals>
         </StyledContainerArrival>
-        <h2>Lunes 11 sept 2023</h2>
+        <h2>{filters.date}</h2>
         <h4>{filters.selectedCityDon}, Colombia(ADZ)</h4>
         <p>Selección de horarios y equipaje</p>
       </StyledDateArrival>
@@ -35,15 +35,15 @@ const ArrivalsFlight = ({ selectedButton2, handleArrivalClick }) => {
                 <hr />
 
                 <StyledTdLastArrivals isSelected={selectedButton2 === '60.000'}
-            onClick={() => handleArrivalClick('07:25', '09:47', '60.000')}>
+            onClick={() => handleArrivalClick('07:25 PM', '09:47 PM', '60.000')}>
                   <img src={ Briefcase }  alt="Briefcase" /> <span>1 objeto personal</span><h4>$ 60.000 COP</h4>
                   </StyledTdLastArrivals >
                 <StyledTdLastArrivals isSelected={selectedButton2 === '90.000'}
-            onClick={() => handleArrivalClick('07:25', '09:47', '90.000')}>
+            onClick={() => handleArrivalClick('07:25 PM', '09:47 PM', '90.000')}>
                   <img src={ Briefcase }  alt="Briefcase" /> <span>Equipaje de mano</span><h4>$ 90.000 COP</h4>
                   </StyledTdLastArrivals>
                 <StyledTdLastArrivals isSelected={selectedButton2 === '120.000'}
-            onClick={() => handleArrivalClick('07:25', '09:47', '120.000')}>
+            onClick={() => handleArrivalClick('07:25 PM', '09:47 PM', '120.000')}>
                   <img src={ Briefcase }  alt="Briefcase" /> <span> Equiaje 25kg</span><h4>$ 120.000 COP</h4>
                   </StyledTdLastArrivals>
 
@@ -59,15 +59,15 @@ const ArrivalsFlight = ({ selectedButton2, handleArrivalClick }) => {
                 <StyledTdArrivals><h2>10:47 PM</h2></StyledTdArrivals>
                 <hr />
                 <StyledTdLastArrivals isSelected={selectedButton2 === '60.00'}
-            onClick={() => handleArrivalClick('08:50', '10:47', '60.00')}>
+            onClick={() => handleArrivalClick('08:50 PM', '10:47 PM', '60.00')}>
                   <img src={ Briefcase }  alt="Briefcase" /> <span>1 objeto personal</span><h4>$ 60.000 COP</h4> 
                 </StyledTdLastArrivals>
                 <StyledTdLastArrivals isSelected={selectedButton2 === '90.00'}
-            onClick={() => handleArrivalClick('08:50', '10:47', '90.00')}>
+            onClick={() => handleArrivalClick('08:50 PM', '10:47 PM', '90.00')}>
                   <img src={ Briefcase }  alt="Briefcase" /> <span>Equipaje de mano</span><h4>$ 90.000 COP</h4>
                 </StyledTdLastArrivals>
                 <StyledTdLastArrivals isSelected={selectedButton2 === '120.00'}
-            onClick={() => handleArrivalClick('08:50', '10:47', '120.00')}>
+            onClick={() => handleArrivalClick('08:50 PM', '10:47 PM', '120.00')}>
                   <img src={ Briefcase }  alt="Briefcase" /> <span> Equiaje 25kg</span><h4>$ 120.000 COP</h4>
                 </StyledTdLastArrivals>
               </tr>

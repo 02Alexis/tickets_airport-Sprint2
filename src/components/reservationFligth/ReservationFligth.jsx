@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Contenedor, StyleContainer, StyleExit, StyleExit2, StyleFlex, Styletext } from "./StyleReservationFligth";
-import { ContenedorCost, StyleContainerCost, ContainerCost, ContainerCostIva, ColumnCost } from "./StyleFlightCost";
+import { ContenedorCost, StyleContainerCost, ContainerCost, ContainerCostIva, ColumnCost, StyleButton } from "./StyleFlightCost";
 import Down from '../../img/line.png'
 import { searchParamsContext } from "../../Routes/AppRouter";
 
@@ -64,22 +64,26 @@ const ReservationFligth = ({departureTime1, handleButtonNavigateSelection, arriv
       <ContainerCost>
         <div>
           <p>Tarida base</p>
+          <p>Tarifa base equipaje</p>
           <p>Tarifa base equipaje 2</p>
-          <p>Descuento Promocional</p>
           <ContainerCostIva>IVA Tarifa</ContainerCostIva>
           <h3>Total</h3>
         </div>
         <ColumnCost>
-          <p>${selectedPrice1}</p>
+        <p>${filters.totalPricePassengers.toFixed(3)}</p>
+          {/* <p>${selectedPrice1}</p> */}
           <p>${selectedPrice2}</p>
-          <p>{filters.totalPricePassengers.toFixed(3)}</p>
+          <p>${selectedPrice1}</p>
           <ContainerCostIva>$75 MXN</ContainerCostIva>
           <h3>${totalPrice}</h3>
         </ColumnCost>
       </ContainerCost>
      </StyleContainerCost>
-     <button onClick={() => handleButtonNavigateSelection()}> Seleccionar asientos </button>
     </ContenedorCost>
+
+    <StyleButton>
+      <button onClick={() => handleButtonNavigateSelection()}> Seleccionar asientos </button>
+     </StyleButton>
    
 
    </>
