@@ -1,7 +1,24 @@
 import styled from "styled-components";
 
 export const SeatDeparture = styled.div`
-  
+width: 450px;
+
+    opacity: 0; /* Establecer la opacidad inicial en 0 */
+  animation-name: fadeIn; /* Nombre de la animación */
+  animation-duration: 0.5s; /* Duración de la animación en segundos */
+  animation-timing-function: ease-in; /* Función de temporización de la animación */
+  animation-fill-mode: forwards; /* Mantener el estado final de la animación */
+  @keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px); /* Animación de desplazamiento hacia abajo */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Animación de desplazamiento hacia arriba */
+  }
+}
+
   @media (max-width: 375px) {
     
   }
@@ -28,7 +45,6 @@ export const Subtittle = styled.div`
 export const Row = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 200px;
 `;
 
 export const Column2 = styled.div`
@@ -58,12 +74,12 @@ export const Button = styled.button`
   border: none;
   border-radius: 5px;
   margin-bottom: 10px;
-  margin-right: 10px;
   cursor: pointer;
   &:hover {
     background-color: var(--purple);
     }
 `;
+
 
 //Estilos Fechas de vielo Departure
 

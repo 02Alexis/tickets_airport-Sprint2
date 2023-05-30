@@ -13,11 +13,8 @@ const AppRouter = () => {
   const [selectedCityDon, setSelectedCityDon] = useState(""); // Estado para almacenar la ciudad seleccionada. Inicialmente está vacío.
   const [dateDre, setDateDre] = useState("");
   const [date, setDate] = useState("");
-  const [passengers, setPassengers] = useState({
-    adults: 0,
-    children: 0,
-    babies: 0,
-  });
+  const [totalPassengers, setTotalPassengers] = useState(0);
+  const [totalPricePassengers, setTotalPricePassengers] = useState(0);
 
   // estados de la pagina detalles de vuelo
   const [departureTime1, setDepartureTime1] = useState("");
@@ -27,6 +24,11 @@ const AppRouter = () => {
   const [arrivalTime2, setArrivalTime2] = useState("");
   const [selectedPrice2, setSelectedPrice2] = useState("");
   const [totalPrice, setTotalPrice] = useState("");
+  const [selectedPassengers, setSelectedPassengers] = useState({
+    adults: 0,
+    children: 0,
+    babies: 0,
+  });
 
   const [filters, setFilters] = useState({});
 
@@ -49,10 +51,12 @@ const AppRouter = () => {
           setDateDre,
           date,
           setDate,
-          passengers,
-          setPassengers,
           filters,
           setFilters,
+          totalPassengers,
+          setTotalPassengers,
+          totalPricePassengers, setTotalPricePassengers,
+          setSelectedPassengers,
 
           departureTime1,
           setDepartureTime1,

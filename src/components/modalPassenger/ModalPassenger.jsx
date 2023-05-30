@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import Swal from "sweetalert2";
 
 const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  
+
   border: 2px solid;
   border-color: var(--Gray);
   border-radius: 5px;
@@ -75,11 +76,20 @@ const ModalButton = styled.button`
 
 const Error = styled.div`
   color: red;
-    font-size: 1.3rem;
+  font-size: 1.3rem;
 `;
 
-const ModalPassenger = ({passengers, setPassengers}) => {
+const adultPrice = 18.000;
+const childPrice = 9.000;
+const babiesPrice = 5.000;
+
+const ModalPassenger = ({ setTotalPassengers, totalPassengers, setTotalPricePassengers }) => {
   const [modalOpen, setModalOpen] = useState(false);
+  const [selectedPassengers, setSelectedPassengers] = useState({
+    adults: 0,
+    children: 0,
+    babies: 0,
+  });
 
   //'toggleModal': Esta función se encarga de cambiar el estado de 'modalOpen' entre 'true' y 'false'. Es utilizada para abrir y cerrar la ventana modal al hacer clic en el botón "Pasajeros".
   const toggleModal = () => {
@@ -88,100 +98,120 @@ const ModalPassenger = ({passengers, setPassengers}) => {
 
   //'increasePassengerCount': Esta función se encarga de aumentar la cantidad de pasajeros de un tipo específico (adultos, niños o bebés). Recibe como parámetro el tipo de pasajero y actualiza el estado correspondiente utilizando 'setAdults', 'setChildren' o 'setBabies'.
   const increasePassengerCount = (type) => {
-    setPassengers((prevPassengers) => ({
+    setSelectedPassengers((prevPassengers) => ({
       ...prevPassengers,
       [type]: prevPassengers[type] + 1,
     }));
-    console.log(passengers)
+    setTotalPassengers((prevTotal) => prevTotal + 1);
   };
 
   //'decreasePassengerCount': Esta función se encarga de disminuir la cantidad de pasajeros de un tipo específico (adultos, niños o bebés). Recibe como parámetro el tipo de pasajero y verifica si la cantidad actual es mayor a 0 antes de disminuirlo utilizando 'setAdults', 'setChildren' o 'setBabies'.
   const decreasePassengerCount = (type) => {
-    if (passengers[type] > 0) {
-      setPassengers((prevPassengers) => ({
+    if (selectedPassengers[type] > 0) {
+      setSelectedPassengers((prevPassengers) => ({
         ...prevPassengers,
         [type]: prevPassengers[type] - 1,
       }));
+      setTotalPassengers((prevTotal) => prevTotal - 1);
     }
   };
 
   //'handleModalConfirm': Esta función se ejecuta al hacer clic en el botón "Confirmar" dentro de la ventana modal. Actualiza el estado 'selectedPassengers' con la cantidad seleccionada de adultos, niños y bebés. Luego, llama a 'toggleModal' para cerrar la ventana modal.
   const handleModalConfirm = () => {
-    console.log("pasajeros",setPassengers);
-    toggleModal();
-  };
+    const total = selectedPassengers.adults + selectedPassengers.children + selectedPassengers.babies;
+    setTotalPassengers(total);
 
-  const getTotalPassengers = () => {
-    return passengers.adults + passengers.children + passengers.babies;
+    if (
+      (selectedPassengers.children > 0 && selectedPassengers.adults === 0) ||
+      (selectedPassengers.babies > 0 && selectedPassengers.adults === 0)
+    ) {
+      Swal.fire({
+        title: "¡Alerta!",
+        text: "Debe viajar al menos un adulto con el niño o bebé.",
+        icon: "warning",
+        confirmButtonText: "Aceptar",
+      });
+      return;
+    }
+
+    const adultCost = selectedPassengers.adults *adultPrice;
+    const childCost = selectedPassengers.children * childPrice;
+    const babiesCost = selectedPassengers.babies * babiesPrice;
+    const totalCost = adultCost + childCost + babiesCost;
+    setTotalPricePassengers(totalCost);
+
+    toggleModal();
   };
 
   return (
     <>
-    <Container>
-      <Button onClick={toggleModal}>Pasajeros</Button>
+      <Container>
+        <Button onClick={toggleModal}>Pasajeros</Button>
 
-      <div>{getTotalPassengers()} pasajeros</div>
+        <div>{totalPassengers} pasajeros</div>
 
-      {modalOpen && (
-        <Modal>
-          <ModalContent>
-            <PassengerContainer>
-              <PassengerTitle>Adultos</PassengerTitle>
-              <div>
-                <PassengerButton
-                  onClick={() => decreasePassengerCount("adults")}
-                >
-                  -
-                </PassengerButton>
-                <span>{passengers.adults}</span>
-                <PassengerButton
-                  onClick={() => increasePassengerCount("adults")}
-                >
-                  +
-                </PassengerButton>
-              </div>
-            </PassengerContainer>
+        {modalOpen && (
+          <Modal>
+            <ModalContent>
+              <PassengerContainer>
+                <PassengerTitle>Adultos</PassengerTitle>
+                <div>
+                  <PassengerButton
+                    onClick={() => decreasePassengerCount("adults")}
+                  >
+                    -
+                  </PassengerButton>
+                  <span>{selectedPassengers.adults}</span>
+                  <PassengerButton
+                    onClick={() => increasePassengerCount("adults")}
+                  >
+                    +
+                  </PassengerButton>
+                </div>
+              </PassengerContainer>
 
-            <PassengerContainer>
-              <PassengerTitle>Niños</PassengerTitle>
-              <div>
-                <PassengerButton
-                  onClick={() => decreasePassengerCount("children")}
-                >
-                  -
-                </PassengerButton>
-                <span>{passengers.children}</span>
-                <PassengerButton
-                  onClick={() => increasePassengerCount("children")}
-                >
-                  +
-                </PassengerButton>
-              </div>
-            </PassengerContainer>
+              <PassengerContainer>
+                <PassengerTitle>Niños</PassengerTitle>
+                <div>
+                  <PassengerButton
+                    onClick={() => decreasePassengerCount("children")}
+                  >
+                    -
+                  </PassengerButton>
+                  <span>{selectedPassengers.children}</span>
+                  <PassengerButton
+                    onClick={() => increasePassengerCount("children")}
+                  >
+                    +
+                  </PassengerButton>
+                </div>
+              </PassengerContainer>
 
-            <PassengerContainer>
-              <PassengerTitle>Bebés</PassengerTitle>
-              <div>
-                <PassengerButton
-                  onClick={() => decreasePassengerCount("babies")}
-                >
-                  -
-                </PassengerButton>
-                <span>{passengers.babies}</span>
-                <PassengerButton
-                  onClick={() => increasePassengerCount("babies")}
-                >
-                  +
-                </PassengerButton>
-              </div>
-            </PassengerContainer>
+              <PassengerContainer>
+                <PassengerTitle>Bebés</PassengerTitle>
+                <div>
+                  <PassengerButton
+                    onClick={() => decreasePassengerCount("babies")}
+                  >
+                    -
+                  </PassengerButton>
+                  <span>{selectedPassengers.babies}</span>
+                  <PassengerButton
+                    onClick={() => increasePassengerCount("babies")}
+                  >
+                    +
+                  </PassengerButton>
+                </div>
+              </PassengerContainer>
 
-            <ModalButton onClick={handleModalConfirm}>Confirmar</ModalButton>
-          </ModalContent>
-        </Modal>
-      )}
-    </Container>
-      {!modalOpen && !getTotalPassengers() ? <Error>{"Este campo es obligatorio"} </Error> : null} 
+              <ModalButton onClick={handleModalConfirm}>Confirmar</ModalButton>
+            </ModalContent>
+          </Modal>
+        )}
+      </Container>
+      {!modalOpen && !totalPassengers ? (
+        <Error>{"Este campo es obligatorio"} </Error>
+      ) : null}
     </>
   );
 };

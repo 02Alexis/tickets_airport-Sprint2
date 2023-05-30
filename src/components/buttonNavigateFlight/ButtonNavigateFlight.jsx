@@ -20,10 +20,10 @@ const Button = styled.button`
   position: absolute;
   top: 95%;
   right: 6%;
+    cursor: pointer;
 
   &:hover {
     background-color: var(--White);
-    cursor: pointer;
     color: var(--purple);
   }
 
@@ -56,7 +56,7 @@ const Button = styled.button`
 
 //Recibe una propiedad show.
 // El botón se muestra u oculta según el valor de show.
-const ButtonNavigateFlight = ({ showSeatSelection, show, handleButtonNavigateSelection }) => {
+const ButtonNavigateFlight = ({ show, handleButtonNavigateSelection }) => {
   // const navigate = useNavigate();
 
   // const handleButton = () => {
