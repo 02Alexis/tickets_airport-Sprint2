@@ -55,7 +55,9 @@ const AppRouter = () => {
           setFilters,
           totalPassengers,
           setTotalPassengers,
-          totalPricePassengers, setTotalPricePassengers,
+          totalPricePassengers,
+          setTotalPricePassengers,
+          selectedPassengers,
           setSelectedPassengers,
 
           departureTime1,

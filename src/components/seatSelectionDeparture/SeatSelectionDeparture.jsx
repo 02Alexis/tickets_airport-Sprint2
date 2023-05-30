@@ -3,13 +3,13 @@ import { useNavigate } from "react-router-dom";
 import { compras } from "../../services/asientos";
 import {
   Aisle,
-  Button,
+  // Button,
   Column,
-  Column2,
+  // Column2,
   ReferenSeat,
   Row,
   SeatDeparture,
-  SeatSelect,
+  // SeatSelect,
   StyleBottonDeparture,
   StyledContainer,
   StyledDate,
@@ -19,20 +19,20 @@ import { searchParamsContext } from "../../Routes/AppRouter";
 
 const SeatSelectionDeparture = () => {
   const {
-    selectedCity,
-    setSelectedCity,
-    selectedCityDon,
-    setSelectedCityDon,
-    dateDre,
-    setDateDre,
-    date,
-    setDate,
-    totalPassengers,
+    // selectedCity,
+    // setSelectedCity,
+    // selectedCityDon,
+    // setSelectedCityDon,
+    // dateDre,
+    // setDateDre,
+    // date,
+    // setDate,
+    // totalPassengers,
     setTotalPassengers,
     setSelectedPassengers,
-    totalPricePassengers,
-    setTotalPricePassengers,
-    setFilters,
+    // totalPricePassengers,
+    // setTotalPricePassengers,
+    // setFilters,
   } = useContext(searchParamsContext);
 
   const navigate = useNavigate();
@@ -41,7 +41,7 @@ const SeatSelectionDeparture = () => {
     navigate("/");
     window.location.reload();
   };
-  const [selectedSeat, setSelectedSeat] = useState([])
+  const [selectedSeat, setSelectedSeat] = useState([]);
 
   console.log(compras);
   const Asientos = () => {
@@ -57,7 +57,7 @@ const SeatSelectionDeparture = () => {
 
         const estaSeleccionado = selectedSeat.some((item) => item === codeSeat);
         arrayFilas.push(
-            <button
+          <button
             onClick={() => {
               const increasePassengerCount = (type) => {
                 setSelectedPassengers((prevPassengers) => ({
@@ -66,8 +66,8 @@ const SeatSelectionDeparture = () => {
                 }));
                 setTotalPassengers((prevTotal) => prevTotal + 1);
               };
-              if (selectedSeat.length < increasePassengerCount){
-                setSelectedSeat([...selectedSeat, codeSeat])
+              if (selectedSeat.length < increasePassengerCount) {
+                setSelectedSeat([...selectedSeat, codeSeat]);
               }
 
               // setSelectedSeat([...selectedSeat, codeSeat])
@@ -77,12 +77,15 @@ const SeatSelectionDeparture = () => {
               width: "50px",
               height: "50px",
               border: "none",
-              borderRadius:"5px",
+              borderRadius: "5px",
               marginBottom: "10px",
               backgroundColor: estaSeleccionado ? "#red" : "#808080",
               cursor: "pointer",
             }}
-             key={position}>{codeSeat}</button>
+            key={position}
+          >
+            {codeSeat}
+          </button>
         );
       }
       asientos.push(arrayFilas);

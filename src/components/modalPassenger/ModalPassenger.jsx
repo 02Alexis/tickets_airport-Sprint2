@@ -79,11 +79,15 @@ const Error = styled.div`
   font-size: 1.3rem;
 `;
 
-const adultPrice = 18.000;
-const childPrice = 9.000;
-const babiesPrice = 5.000;
+const adultPrice = 18.0;
+const childPrice = 9.0;
+const babiesPrice = 5.0;
 
-const ModalPassenger = ({ setTotalPassengers, totalPassengers, setTotalPricePassengers }) => {
+const ModalPassenger = ({
+  setTotalPassengers,
+  totalPassengers,
+  setTotalPricePassengers,
+}) => {
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedPassengers, setSelectedPassengers] = useState({
     adults: 0,
@@ -118,7 +122,10 @@ const ModalPassenger = ({ setTotalPassengers, totalPassengers, setTotalPricePass
 
   //'handleModalConfirm': Esta función se ejecuta al hacer clic en el botón "Confirmar" dentro de la ventana modal. Actualiza el estado 'selectedPassengers' con la cantidad seleccionada de adultos, niños y bebés. Luego, llama a 'toggleModal' para cerrar la ventana modal.
   const handleModalConfirm = () => {
-    const total = selectedPassengers.adults + selectedPassengers.children + selectedPassengers.babies;
+    const total =
+      selectedPassengers.adults +
+      selectedPassengers.children +
+      selectedPassengers.babies;
     setTotalPassengers(total);
 
     if (
@@ -134,7 +141,7 @@ const ModalPassenger = ({ setTotalPassengers, totalPassengers, setTotalPricePass
       return;
     }
 
-    const adultCost = selectedPassengers.adults *adultPrice;
+    const adultCost = selectedPassengers.adults * adultPrice;
     const childCost = selectedPassengers.children * childPrice;
     const babiesCost = selectedPassengers.babies * babiesPrice;
     const totalCost = adultCost + childCost + babiesCost;
