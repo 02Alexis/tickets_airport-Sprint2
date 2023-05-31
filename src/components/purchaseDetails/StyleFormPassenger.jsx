@@ -6,7 +6,7 @@ export const StyleForm = styled.form`
   margin: 0 auto;
   padding: 50px;
   border-radius: 15px;
-  box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 24px 46px 16px rgba(0, 0, 0, 0.2);
   border: 1px solid #b9b9b9;
   
   h2 {

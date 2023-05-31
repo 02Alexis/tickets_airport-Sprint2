@@ -45,12 +45,11 @@ export const StyleBa = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 120%;
     width: 128%;
     background-color: white;
     z-index: 1;
     top: 28px;
-    left: 280px;
+    left: 267px;
     
     h1 {
       width: 97%;
