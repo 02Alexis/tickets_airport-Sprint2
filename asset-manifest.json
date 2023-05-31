@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.js": "/tickets_airport-Sprint2/static/js/main.fee1a0b7.js",
+    "static/media/404.gif": "/tickets_airport-Sprint2/static/media/404.181c5a6430bcb77324b1.gif",
+    "static/media/Aterrizaje.jpg": "/tickets_airport-Sprint2/static/media/Aterrizaje.ccb1ac681c52886589bf.jpg",
+    "static/media/famahorro.svg": "/tickets_airport-Sprint2/static/media/famahorro.bb98ae2aa97effa53392cd9c2f370cd2.svg",
+    "static/media/paypal.svg": "/tickets_airport-Sprint2/static/media/paypal.e0e902001aa6130153f440527b08fc3f.svg",
+    "static/media/mastercard.svg": "/tickets_airport-Sprint2/static/media/mastercard.216fffdeec73196a098eebd391b0a4b4.svg",
+    "static/media/walmart.svg": "/tickets_airport-Sprint2/static/media/walmart.ffaae491dbe915a1d2afc431e612d28f.svg",
+    "static/media/seven.svg": "/tickets_airport-Sprint2/static/media/seven.eeed428e0014b6a049b50498ac98d9b8.svg",
+    "static/media/oxxo.svg": "/tickets_airport-Sprint2/static/media/oxxo.1126eb93b189d8ac2390fa548b51af6e.svg",
+    "static/media/amex.svg": "/tickets_airport-Sprint2/static/media/amex.fe5b0198fde5daf11bc8f7f304bb339b.svg",
+    "static/media/visa.svg": "/tickets_airport-Sprint2/static/media/visa.7446724c516da38e33700e388e4dcf67.svg",
+    "static/media/car.svg": "/tickets_airport-Sprint2/static/media/car.57b5ec9d8441eef86c4a1b58b9121981.svg",
+    "static/media/invex.svg": "/tickets_airport-Sprint2/static/media/invex.3ec14c732c3ef228ee0303a3cd2cfca4.svg",
+    "static/media/used.svg": "/tickets_airport-Sprint2/static/media/used.9f6d6fe36bd7b8b464d7dc0de8c95403.svg",
+    "static/media/bed.svg": "/tickets_airport-Sprint2/static/media/bed.7fb6451b1fd49d3a4c1d2e93e1008a9b.svg",
+    "static/media/hoveryavas.svg": "/tickets_airport-Sprint2/static/media/hoveryavas.712ebc854873805ca28f40c78f1ca60e.svg",
+    "static/media/archive.svg": "/tickets_airport-Sprint2/static/media/archive.1d32adacf39737abb9704473fb2ffbf4.svg",
+    "static/media/plane2.svg": "/tickets_airport-Sprint2/static/media/plane2.a5e61300c0314f0f07c1362b194c61d4.svg",
+    "index.html": "/tickets_airport-Sprint2/index.html",
+    "static/media/briefcase.svg": "/tickets_airport-Sprint2/static/media/briefcase.429fd611a0f9c345e6819aa71c3fab6a.svg",
+    "static/media/plane.svg": "/tickets_airport-Sprint2/static/media/plane.2ee9f0d59defc992ddc06e97166dc446.svg",
+    "main.fee1a0b7.js.map": "/tickets_airport-Sprint2/static/js/main.fee1a0b7.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.fee1a0b7.js"
+  ]
+}
