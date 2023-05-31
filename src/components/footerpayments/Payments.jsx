@@ -9,14 +9,14 @@ import Oxxo from "../../assets/index/oxxo.svg";
 import Seven from "../../assets/index/seven.svg";
 import Walmart from "../../assets/index/walmart.svg";
 import FarmaAhorros from "../../assets/index/famahorro.svg";
-import Services from '../footerservices/Services';
 import ServicesCards from '../footerservices/Services';
 
 
 
 const Payments = () => {
     return (
-        <div>
+        <>
+         <div>
         <StyledTitle>
             <h3>Pago seguro</h3>
         </StyledTitle>
@@ -45,6 +45,7 @@ const Payments = () => {
         
         
         </div>
+        </>       
     )
 }
 
