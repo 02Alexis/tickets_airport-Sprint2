@@ -113,7 +113,7 @@ const FlightDetail = () => {
   };
 
   const calculateTotalPrice = (price1, price2) => {
-    const total = parseFloat(price1) + parseFloat(price2);
+    const total = parseFloat(price1) + parseFloat(price2)+ parseFloat(totalPricePassengers);
     setTotalPrice(total.toFixed(2));
   };
 

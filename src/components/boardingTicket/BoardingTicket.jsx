@@ -1,12 +1,16 @@
 import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { searchParamsContext } from "../../Routes/AppRouter";
-import { BoardingPass, BoardingPassItem, BottomBar, ContBord1, ContBord2, Container, Grid, ReservationCodeTitle, TopBar, UserDataColumn, UserDataItem } from "./StyleBordingTicket";
-import QrCode from "../../assets/qrcode-svgrepo-com.svg"
+import { BoardingPass, BoardingPassItem, BottomBar, ContBord1, ContBord2, Container, Grid, ReservationCodeTitle, TopBar, UserDataColumn, UserDataItem, QRCodeContainer } from "./StyleBordingTicket";
 
 const BoardingTicket = () => {
   const [userData, setUserData] = useState(null);
   const { filters, selectedSeat, selectedSeatArrival } = useContext(searchParamsContext);
+  const text = `Codigo: "IZSJ344"\nCiudad Origen: ${filters.selectedCity}\nFecha vuelo salida: ${filters.dateDre}\nHora de Salida: ${filters.departureTime1}\nAsientos Salida: ${selectedSeat.join(", ")}\n -------- \nCiudad Destino: ${filters.selectedCityDon.slice(-3)}`;
+
+  const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(
+    text
+  )}&size=100x100`;
 
   useEffect(() => {
     const fetchLastUserFromAPI = async () => {
@@ -101,7 +105,9 @@ const BoardingTicket = () => {
           <UserDataItem>
             <strong>Teléfono:</strong> {userData && userData.phone}
           </UserDataItem>
-          <UserDataItem><img src={QrCode} alt="QrCode" /></UserDataItem>
+      <QRCodeContainer>
+        <img src={qrCodeUrl} alt="QR Code" />
+      </QRCodeContainer>
         </UserDataColumn>
         
       </BoardingPass>
