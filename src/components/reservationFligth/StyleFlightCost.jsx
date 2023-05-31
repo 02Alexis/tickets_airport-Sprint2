@@ -140,7 +140,7 @@ export const StyleButtonNavigate = styled.div`
     align-items: center;
 
     position: absolute;
-    top: 95%;
+    top: 115%;
     right: 6%;
     cursor: pointer;
     &:hover {

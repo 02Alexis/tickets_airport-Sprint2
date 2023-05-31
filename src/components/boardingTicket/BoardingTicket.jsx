@@ -6,7 +6,7 @@ import QrCode from "../../assets/qrcode-svgrepo-com.svg"
 
 const BoardingTicket = () => {
   const [userData, setUserData] = useState(null);
-  const { filters } = useContext(searchParamsContext);
+  const { filters, selectedSeat, selectedSeatArrival } = useContext(searchParamsContext);
 
   useEffect(() => {
     const fetchLastUserFromAPI = async () => {
@@ -58,6 +58,11 @@ const BoardingTicket = () => {
               Hora de Salida: <span>{filters.departureTime1}</span>
             </strong>
           </BoardingPassItem>
+          <BoardingPassItem>
+            <strong>
+            Asientos de Salida: <span>{selectedSeat.join(", ")}</span>
+            </strong>
+          </BoardingPassItem>
           </ContBord1>
           <ContBord2>
           <BoardingPassItem>
@@ -73,6 +78,11 @@ const BoardingTicket = () => {
           <BoardingPassItem>
             <strong>
               Hora de Llegada:<span> {filters.arrivalTime1}</span>
+            </strong>
+          </BoardingPassItem>
+          <BoardingPassItem>
+            <strong>
+            Asientos de Regreso: <span> {selectedSeatArrival.join(", ")}</span>
             </strong>
           </BoardingPassItem>
           </ContBord2>
