@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_FAKE = "https://minibackend-aerolinea-app-production.up.railway.app/";
+const API_FAKE = "http://localhost:4000/";
 const endpointFlights = "flights";
 
 export const GetFlights = async () => {

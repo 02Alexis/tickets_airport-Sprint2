@@ -1,40 +1,26 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { compras } from "../../services/asientos";
-
 import {
   Aisle,
-  // Button,
   Column,
-  // Column2,
   ReferenSeat,
   Row,
   SeatDeparture,
-  // SeatSelect,
   StyleBottonDeparture,
   StyledContainer,
   StyledDate,
   Subtittle,
 } from "./StyleSeatSelectionDeparture";
 import { searchParamsContext } from "../../Routes/AppRouter";
+import Swal from "sweetalert2";
 
 const SeatSelectionDeparture = () => {
+
   const {
-    // selectedCity,
-    // setSelectedCity,
-    // selectedCityDon,
-    // setSelectedCityDon,
-    // dateDre,
-    // setDateDre,
-    // date,
-    // setDate,
-    // totalPassengers,
-    setTotalPassengers,
-    setSelectedPassengers,
-    // totalPricePassengers,
-    // setTotalPricePassengers,
+     totalPassengers, selectedSeat, setSelectedSeat, filters
     // setFilters,
   } = useContext(searchParamsContext);
+
 
   const navigate = useNavigate();
 
@@ -43,13 +29,28 @@ const SeatSelectionDeparture = () => {
     window.location.reload();
   };
 
-  const [selectedSeat, setSelectedSeat] = useState([]);
+  const handleSeatClick = (codeSeat) => {
+    if (selectedSeat.includes(codeSeat)) {
+      setSelectedSeat(selectedSeat.filter((seat) => seat !== codeSeat));
+    } else {
+      if (selectedSeat.length < totalPassengers) {
+        setSelectedSeat([...selectedSeat, codeSeat]);
+      } else {
+        Swal.fire('Ya has seleccionado todos los asientos necesarios')
+      }
+    }
+  };
 
-  console.log(compras);
   const Asientos = () => {
     const asientos = [];
     const filas = 10;
     const columnas = 6;
+
+    const asientosBloqueados = ["A2", "C4", "D6", "E1", "F3", "F5"];
+
+    const estaSeleccionado = (codeSeat) => {
+      return selectedSeat.includes(codeSeat);
+    };
 
     for (let index = 0; index < filas; index++) {
       const arrayFilas = [];
@@ -57,34 +58,28 @@ const SeatSelectionDeparture = () => {
         const isSpecialColumn = position === 2;
         const codeSeat = `${String.fromCharCode(65 + index)}${position + 1}`;
 
-        const estaSeleccionado = selectedSeat.some((item) => item === codeSeat);
+        const isBloqueado = asientosBloqueados.includes(codeSeat);
+
         arrayFilas.push(
           <button
-            onClick={() => {
-              const increasePassengerCount = (type) => {
-                setSelectedPassengers((prevPassengers) => ({
-                  ...prevPassengers,
-                  [type]: prevPassengers[type] + 1,
-                }));
-                setTotalPassengers((prevTotal) => prevTotal + 1);
-              };
-              if (selectedSeat.length < increasePassengerCount) {
-                setSelectedSeat([...selectedSeat, codeSeat]);
-              }
-
-              // setSelectedSeat([...selectedSeat, codeSeat])
-            }}
+            onClick={() => handleSeatClick(codeSeat)}
             style={{
-              marginRight: isSpecialColumn ? "50px" : "10px",
+              marginRight: isSpecialColumn ? "65px" : "10px",
               width: "50px",
               height: "50px",
-              border: "none",
+              border: `2px solid ${isBloqueado ? "#9e1071" : "transparent"}`,
               borderRadius: "5px",
               marginBottom: "10px",
-              backgroundColor: estaSeleccionado ? "#red" : "#808080",
-              cursor: "pointer",
+              color: isBloqueado ? "white" : "#000",
+              backgroundColor: isBloqueado
+              ? "white" // Color negro para asientos bloqueados 
+              : estaSeleccionado(codeSeat)
+              ? "#9e1071"
+              : "#b9b9b9",
+              cursor: isBloqueado ? "not-allowed" : "pointer",
             }}
             key={position}
+            disabled={isBloqueado}
           >
             {codeSeat}
           </button>
@@ -106,9 +101,10 @@ const SeatSelectionDeparture = () => {
               Cambiar vuelo
             </StyleBottonDeparture>
           </StyledContainer>
-          <h2>Jueves 20 jul 2023</h2>
-          <h4>Medellín, Colombia(MDE)</h4>
+          <h2>{filters.dateDre}</h2>
+          <h4>{filters.selectedCity}, Colombia({filters.selectedCity.slice(-3)})</h4>
           <p>Selecciona tus asientos</p>
+
         </StyledDate>
         <ReferenSeat>
           <Column>
@@ -134,135 +130,6 @@ const SeatSelectionDeparture = () => {
         </Subtittle>
 
         <Asientos />
-
-        {/* <SeatSelect>
-        <Column>
-          <Row>
-            <Button></Button>
-            <Button></Button>
-            <Button></Button>
-          </Row>
-          <Row>
-            <Button></Button>
-            <Button></Button>
-            <Button></Button>
-          </Row>
-          <Row>
-            <Button></Button>
-            <Button></Button>
-            <Button></Button>
-          </Row>
-          <Row>
-            <Button></Button>
-            <Button></Button>
-            <Button></Button>
-          </Row>
-          <Row>
-            <Button></Button>
-            <Button></Button>
-            <Button></Button>
-          </Row>
-        </Column>
-          <Column2>
-            <Aisle>1</Aisle>
-            <Aisle>2</Aisle>
-            <Aisle>3</Aisle>
-            <Aisle>4</Aisle>
-            <Aisle>5</Aisle>
-            
-          </Column2>
-        <Column>
-          <Row>
-            <Button></Button>
-            <Button></Button>
-            <Button></Button>
-          </Row>
-          <Row>
-            <Button></Button>
-            <Button></Button>
-            <Button></Button>
-          </Row>
-          <Row>
-            <Button></Button>
-            <Button></Button>
-            <Button></Button>
-          </Row>
-          <Row>
-            <Button></Button>
-            <Button></Button>
-            <Button></Button>
-          </Row>
-          <Row>
-            <Button></Button>
-            <Button></Button>
-            <Button></Button>
-          </Row>
-        </Column>
-      </SeatSelect>
-      <Subtittle><h5>Estándar</h5></Subtittle>
-      <SeatSelect>
-        <Column>
-          <Row>
-            <Button></Button>
-            <Button></Button>
-            <Button></Button>
-          </Row>
-          <Row>
-            <Button></Button>
-            <Button></Button>
-            <Button></Button>
-          </Row>
-          <Row>
-            <Button></Button>
-            <Button></Button>
-            <Button></Button>
-          </Row>
-          <Row>
-            <Button></Button>
-            <Button></Button>
-            <Button></Button>
-          </Row>
-          <Row>
-            <Button></Button>
-            <Button></Button>
-            <Button></Button>
-          </Row>
-        </Column>
-          <Column2>
-            <Aisle>6</Aisle>
-            <Aisle>7</Aisle>
-            <Aisle>8</Aisle>
-            <Aisle>9</Aisle>
-            <Aisle>10</Aisle>
-          </Column2>
-        <Column>
-          <Row>
-            <Button></Button>
-            <Button></Button>
-            <Button></Button>
-          </Row>
-          <Row>
-            <Button></Button>
-            <Button></Button>
-            <Button></Button>
-          </Row>
-          <Row>
-            <Button></Button>
-            <Button></Button>
-            <Button></Button>
-          </Row>
-          <Row>
-            <Button></Button>
-            <Button></Button>
-            <Button></Button>
-          </Row>
-          <Row>
-            <Button></Button>
-            <Button></Button>
-            <Button></Button>
-          </Row>
-        </Column>
-      </SeatSelect> */}
       </SeatDeparture>
     </>
   );

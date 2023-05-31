@@ -31,6 +31,9 @@ const AppRouter = () => {
     babies: 0,
   });
 
+  const [selectedSeat, setSelectedSeat] = useState([]);
+  const [selectedSeatArrival, setSelectedSeatArrival] = useState([]);
+
   const [filters, setFilters] = useState({});
 
   // const getParamsFronStorage = () => {
@@ -75,6 +78,11 @@ const AppRouter = () => {
           setSelectedPrice2,
           totalPrice,
           setTotalPrice,
+
+          selectedSeat,
+          setSelectedSeat,
+          selectedSeatArrival,
+          setSelectedSeatArrival,
         }}
       >
         <Routes>
