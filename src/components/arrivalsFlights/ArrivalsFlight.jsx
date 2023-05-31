@@ -21,7 +21,7 @@ const ArrivalsFlight = ({ selectedButton2, handleArrivalClick }) => {
         <StyleBottonArrivals  onClick={() => navigate(-1)}>Cambiar vuelo</StyleBottonArrivals>
         </StyledContainerArrival>
         <h2>{filters.date}</h2>
-        <h4>{filters.selectedCityDon}, Colombia(ADZ)</h4>
+        <h4>{filters.selectedCityDon}, Colombia({filters.selectedCityDon.slice(-3)})</h4>
         <p>Selección de horarios y equipaje</p>
       </StyledDateArrival>
 

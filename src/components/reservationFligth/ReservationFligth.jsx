@@ -66,7 +66,7 @@ const ReservationFligth = ({departureTime1, handleButtonNavigateSelection, arriv
           <p>Tarida base</p>
           <p>Tarifa base equipaje</p>
           <p>Tarifa base equipaje 2</p>
-          <ContainerCostIva>IVA Tarifa</ContainerCostIva>
+          <ContainerCostIva>IVA Tarifa 16%</ContainerCostIva>
           <h3>Total</h3>
         </div>
         <ColumnCost>
@@ -74,7 +74,7 @@ const ReservationFligth = ({departureTime1, handleButtonNavigateSelection, arriv
           {/* <p>${selectedPrice1}</p> */}
           <p>${selectedPrice2}</p>
           <p>${selectedPrice1}</p>
-          <ContainerCostIva>$75 MXN</ContainerCostIva>
+          <ContainerCostIva>$</ContainerCostIva>
           <h3>${totalPrice}</h3>
         </ColumnCost>
       </ContainerCost>

@@ -86,9 +86,9 @@ const Error = styled.div`
   }
 `;
 
-const adultPrice = 18.0;
-const childPrice = 9.0;
-const babiesPrice = 5.0;
+const adultPrice = 70.000;
+const childPrice = 55.000;
+const babiesPrice = 35.000;
 
 const ModalPassenger = ({
   setTotalPassengers,

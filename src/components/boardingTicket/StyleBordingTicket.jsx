@@ -148,3 +148,9 @@ export const BottomBar = styled(HorizontalBar)`
 export const ReservationCodeTitle = styled.h3`
   grid-column: 1 / span 2;
 `;
+
+export const QRCodeContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;

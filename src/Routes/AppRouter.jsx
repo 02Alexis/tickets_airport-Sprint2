@@ -5,7 +5,7 @@ import FlightDetail from "../pages/FlightDetail";
 import NotFoundPage from "../pages/NotFoundPage";
 import SeatSelection from "../pages/SeatSelection";
 import PurchasePage from "../pages/PurchasePage";
-import Ticket from "../pages/Ticket"
+import Ticket from "../pages/Ticket";
 
 export const searchParamsContext = createContext({});
 
@@ -25,6 +25,7 @@ const AppRouter = () => {
   const [arrivalTime2, setArrivalTime2] = useState("");
   const [selectedPrice2, setSelectedPrice2] = useState("");
   const [totalPrice, setTotalPrice] = useState("");
+  const [iva, setIva] = useState(16);
   const [selectedPassengers, setSelectedPassengers] = useState({
     adults: 0,
     children: 0,
@@ -63,6 +64,8 @@ const AppRouter = () => {
           setTotalPricePassengers,
           selectedPassengers,
           setSelectedPassengers,
+          iva,
+          setIva,
 
           departureTime1,
           setDepartureTime1,
