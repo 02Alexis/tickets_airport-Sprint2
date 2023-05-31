@@ -1,5 +1,29 @@
 import styled from "styled-components";
 
+export const SeatArrival = styled.div`
+width: 450px;
+
+    opacity: 0; /* Establecer la opacidad inicial en 0 */
+  animation-name: fadeIn; /* Nombre de la animación */
+  animation-duration: 0.5s; /* Duración de la animación en segundos */
+  animation-timing-function: ease-in; /* Función de temporización de la animación */
+  animation-fill-mode: forwards; /* Mantener el estado final de la animación */
+  @keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px); /* Animación de desplazamiento hacia abajo */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Animación de desplazamiento hacia arriba */
+  }
+}
+
+  @media (max-width: 375px) {
+    
+  }
+`;
+
 export const SeatSelectArrival = styled.div`
   display: flex;
   justify-content: space-between;
@@ -24,7 +48,6 @@ export const SubtittleArrival = styled.div`
 export const RowArrival = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 200px;
 `;
 
 export const Column2Arrival = styled.div`

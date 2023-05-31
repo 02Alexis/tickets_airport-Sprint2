@@ -76,7 +76,7 @@ const ReservationCodeTitle = styled.h3`
 const BoardingTicket = () => {
     const [userData, setUserData] = useState(null);
     const {
-      filters,
+      filters
     } = useContext(searchParamsContext);
   
     useEffect(() => {

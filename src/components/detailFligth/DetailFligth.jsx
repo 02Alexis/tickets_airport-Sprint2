@@ -15,36 +15,20 @@ import {
   ContainerCost,
   ContainerCostIva,
   ColumnCost,
-  StyleButtonNavigate
+  StyleButtonNavigate,
+  ServiciosOpcionales,
 } from "../reservationFligth/StyleFlightCost";
 import { useNavigate } from "react-router";
 
-const DetailFligth = ({
-  departureTime1,
-  arrivalTime1,
-  departureTime2,
-  arrivalTime2,
-  selectedPrice1,
-  selectedPrice2,
-  totalPrice,
-  totalPricePassengers,
-}) => {
+const DetailFligth = () => {
   const navigate = useNavigate();
   const handleButton = () => {
     console.log("entre");
     navigate("/purchasePage");
   };
 
-  const { filters } = useContext(searchParamsContext);
-
-  // const [details, setDetails] = useState({});
-
-  // useEffect(() => {
-  //   console.log("datos de filters", filters);
-  //   getCitiesData(filters.selectedCity).then(response => {
-  //     console.log("datos de response",response);
-  //   })
-  // }, [filters])
+  const { filters, selectedSeat, selectedSeatArrival } =
+    useContext(searchParamsContext);
 
   return (
     <>
@@ -86,25 +70,43 @@ const DetailFligth = ({
       <ContenedorCost>
         <h1>Costos de vuelo</h1>
         <StyleContainerCost>
-        <ContainerCost>
-        <div>
-          <p>Tarida base</p>
-          <p>Tarifa base equipaje</p>
-          <p>Tarifa base equipaje 2</p>
-          <ContainerCostIva>IVA Tarifa</ContainerCostIva>
-          <h3>Total</h3>
-        </div>
-        <ColumnCost>
-        <p>${filters.totalPricePassengers.toFixed(3)}</p>
-          {/* <p>${selectedPrice1}</p> */}
-          <p>${filters.selectedPrice2}</p>
-          <p>${filters.selectedPrice1}</p>
-          <ContainerCostIva>$75 MXN</ContainerCostIva>
-          <h3>${filters.totalPrice}</h3>
-        </ColumnCost>
+          <ContainerCost>
+            <div>
+              <p>Tarida base</p>
+              <p>Tarifa base equipaje</p>
+              <p>Tarifa base equipaje 2</p>
+              <ContainerCostIva>IVA Tarifa</ContainerCostIva>
+              <h3>Total</h3>
+            </div>
+            <ColumnCost>
+              <p>${filters.totalPricePassengers.toFixed(3)}</p>
+              {/* <p>${selectedPrice1}</p> */}
+              <p>${filters.selectedPrice2}</p>
+              <p>${filters.selectedPrice1}</p>
+              <ContainerCostIva>$75 MXN</ContainerCostIva>
+              <h3>${filters.totalPrice}</h3>
+            </ColumnCost>
           </ContainerCost>
         </StyleContainerCost>
       </ContenedorCost>
+
+      <ServiciosOpcionales>
+      <h1>Servicios Opcionales</h1>
+        <StyleContainer>
+          <div>
+            <p>
+              Asientos de Salida:{" "}
+              {selectedSeat.map((seat) => seat).join(", ")}
+            </p>
+          </div>
+          <div>
+            <p>
+              Asientos de Regreso:{" "}
+              {selectedSeatArrival.map((seat) => seat).join(", ")}
+            </p>
+          </div>
+        </StyleContainer>
+      </ServiciosOpcionales>
 
       <StyleButtonNavigate>
         <button onClick={() => handleButton()}>pagar</button>
